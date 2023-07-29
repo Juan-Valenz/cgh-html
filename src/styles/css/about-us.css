@@ -1,0 +1,212 @@
+#about {
+  width: 80%;
+  margin-inline: auto;
+  padding-block: 180px;
+}
+#about h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+@media (width > 600px) {
+  #about h2 {
+    font-size: clamp(1.1rem, 0.83rem + 0.73vw, 1.7rem);
+  }
+}
+#about main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#about main p {
+  text-align: justify;
+  font-size: 0.83rem;
+}
+@media (width > 600px) {
+  #about main p {
+    font-size: clamp(0.83rem, 0.31rem + 0.85vw, 1.33rem);
+  }
+}
+#about main p span {
+  font-weight: bold;
+  color: hsl(var(--accent-bg));
+}
+
+#map {
+  grid-area: 2/1/1 span/2 span;
+  width: 100%;
+  max-width: none;
+  height: 300px;
+  padding-top: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#contact {
+  max-width: none;
+}
+#contact .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  min-height: calc(100vh - 90px);
+  margin: 0 20px 20px;
+  background: linear-gradient(-45deg, #ee7752, rgba(202, 135, 11, 0.6117647059), #23a6d5, #23d5ab);
+  background-size: auto;
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+  border-radius: 50px;
+}
+#contact .container .form {
+  padding: 20px;
+  border-radius: 5px;
+}
+#contact .container .form label,
+#contact .container .form input[type=checkbox] {
+  cursor: pointer;
+}
+#contact .container .form input[type=text],
+#contact .container .form input[type=number],
+#contact .container .form select,
+#contact .container .form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  font-size: 0.8rem;
+  border: 1px solid hsl(var(--main-bg));
+  resize: vertical;
+  background-color: hsl(var(--secondary-bg)/0.062);
+  border-radius: 8px;
+}
+@media (width > 600px) {
+  #contact .container .form input[type=text],
+  #contact .container .form input[type=number],
+  #contact .container .form select,
+  #contact .container .form textarea {
+    font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
+  }
+}
+#contact .container .form textarea {
+  min-height: 140px;
+}
+#contact .container .form button {
+  background-color: hsl(var(--secondary-bg)/0.2);
+  color: hsl(var(--txt-light));
+  padding: 15px 25px;
+  cursor: pointer;
+  border: none;
+  border: 1px solid hsl(var(--main-bg));
+  border-radius: 8px;
+}
+#contact .container .form button:hover {
+  background-color: hsl(var(--accent-bg));
+}
+#contact .container .form main .services > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#contact .container .form main .services > div > label {
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  user-select: none;
+}
+#contact .container .form main .services > div > label input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+#contact .container .form main .services > div > label .checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  background-color: hsl(var(--grey)/0.8);
+  border: 1px solid hsl(var(--main-bg)/0.6);
+  border-radius: 5px;
+}
+#contact .container .form main .services > div > label .checkmark:after {
+  content: "";
+  display: none;
+  width: 5px;
+  height: 10px;
+  border: solid hsl(var(--white));
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+#contact .container .form main .services > div > label .checkmark ~ span {
+  width: fit-content;
+  height: fit-content;
+  font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
+}
+#contact .container .form main .services > div > label input:checked ~ .checkmark {
+  background-color: hsl(var(--accent-bg));
+}
+#contact .container .form main .services > div > label input:checked ~ .checkmark::after {
+  display: block;
+}
+#contact .container .form main .services > div > label:hover input ~ .checkmark {
+  filter: brightness(95%);
+}
+#contact .container .form main .contact_info label,
+#contact .container .form main .services > label,
+#contact .container .form main > label,
+#contact .container .form main button {
+  font-weight: bold;
+}
+#contact .container header {
+  text-align: center;
+}
+#contact .container header h2 {
+  color: hsl(var(--txt-light));
+  font-size: 2rem;
+}
+#contact .container header p {
+  color: hsl(var(--txt-light));
+}
+#contact .container main {
+  float: left;
+  margin-top: 6px;
+  padding: 20px;
+}
+#contact .container main > div {
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+}
+#contact .container .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (width < 600px) {
+  #contact .container {
+    padding-inline: 5%;
+  }
+  #contact .container main,
+  #contact .container button {
+    width: 100%;
+    margin-top: 0;
+  }
+  #contact .container .form main .services > div {
+    grid-template-columns: 1fr;
+  }
+}
+@media (width > 1080px) {
+  #contact .container main > .contact_info {
+    flex-direction: row;
+  }
+}
