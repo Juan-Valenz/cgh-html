@@ -72,95 +72,61 @@ main > section {
 }
 
 //SECTION: NAVIGATION
-////  COLORS
+///COLORS
 #nav {
   background-color: hsl(var(--main-bg));
-}
 
-.navigation {
-  background-color: hsl(var(--main-bg));
+  .navigation {
+    background-color: hsl(var(--main-bg));
 
-  a:where(:hover, :active, .active) {
-    color: hsl(var(--txt-accent));
+    a:where(:hover, :active, .active) {
+      color: hsl(var(--txt-accent));
+    }
   }
-}
-.contact_us {
-  background-color: hsl(var(--orange));
-  color: hsl(var(--txt-light));
-  p {
-    filter: brightness(95%);
+  .contact_us {
+    background-color: hsl(var(--orange));
+    color: hsl(var(--txt-light));
+    p {
+      filter: brightness(95%);
+    }
   }
-}
 
-.burger {
-  background-color: transparent;
-}
+  .burger {
+    background-color: transparent;
+  }
 
-.btn_language {
-  @include bootstrap.btn-multiple-options;
-}
+  .btn_language {
+    @include bootstrap.btn-multiple-options;
+  }
 
-#nav.down {
-  border-bottom-color: hsl(var(--accent-bg) / 0.3);
-}
+  &.down {
+    border-bottom-color: hsl(var(--accent-bg) / 0.3);
+  }
 
-/// POSITIONING AND STYLES
-#nav {
-  //POSITION
+  /// POSITION & DISPLAY
+  ////POSITION
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
-  //    LENGTH
-  width: 100%;
-  height: 80px;
-  transition: 0.3s height;
-
   > div {
-    //    FLEX
+    ////FLEX
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //    LENGTH
-    width: 100%;
-    height: 100%;
-    padding-inline: 20px;
   }
-
-  &.down {
-    //    DECORATION
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+  .logo {
+    ////POSITION
+    position: relative;
   }
-  .navigation a:where(:hover, :active, .active) {
-    font-weight: bold;
+  .options {
+    ////FLEX
+    display: flex;
+    gap: 20px;
   }
-}
-
-.logo {
-  ////POSITION
-  position: relative;
-  //    LENGTH
-  height: 80px;
-  width: 80px;
-  min-height: 80px;
-  min-width: 80px;
-}
-
-.options {
-  ////FLEX
-  display: flex;
-  gap: 20px;
-
   .navigation {
     display: none;
-    a {
-      ////FLEX
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
     &.active {
       ////POSITION
       position: absolute;
@@ -170,16 +136,92 @@ main > section {
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      ////LENGTH
-      height: calc(100dvh - 80px);
-      ////DECORATION
-      transition: 1s height;
 
       a {
         ////FLEX
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+    }
+    a {
+      ////FLEX
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .contact_us {
+    ////FLEX
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .languages {
+    ////FLEX
+    display: flex;
+    gap: 5px;
+    .btn_language {
+      ////FLEX
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media (width > 1080px) {
+    .navigation {
+      display: flex;
+      gap: 5px;
+    }
+    .burger {
+      display: none;
+    }
+  }
+  @media (width < 600px) {
+    .options {
+      gap: 5px;
+    }
+  }
+  /// LENGTH AND STYLES
+  ////LENGTH
+  width: 100%;
+  height: 80px;
+  transition: 0.3s height;
+
+  &.down {
+    ////DECORATION
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+  > div {
+    ////LENGTH
+    width: 100%;
+    height: 100%;
+    padding-inline: 20px;
+  }
+
+  .navigation a:where(:hover, :active, .active) {
+    ////TEXT
+    font-weight: bold;
+  }
+
+  .logo {
+    ////LENGTH
+    height: 80px;
+    width: 80px;
+    min-height: 80px;
+    min-width: 80px;
+  }
+
+  .navigation {
+    &.active {
+      ////LENGTH
+      height: calc(100dvh - 80px);
+      ////DECORATION
+      transition: 1s height;
+      a {
         ////LENGTH
         width: 100%;
         min-height: 85px;
@@ -189,11 +231,7 @@ main > section {
     }
   }
   .contact_us {
-    ////FLEX
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //    LENGTH
+    ////LENGTH
     width: 105px;
     min-width: 80px;
     text-align: center;
@@ -207,78 +245,55 @@ main > section {
     }
   }
   .languages {
-    //    FLEX
-    display: flex;
-    gap: 5px;
-    //    TEXT
+    ////TEXT
     font-size: 0.95rem;
-
     .btn_language {
-      //  FLEX
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      //    LENGTH
+      ////LENGTH
       width: 55px;
       height: 30px;
-      //    DECORATION
+      ////DECORATION
       border-radius: 8px;
-
       &.active {
-        //  TEXT
+        ////TEXT
         font-weight: 800;
       }
     }
   }
 
   .burger {
-    //  LENGTH
+    ////LENGTH
     height: 30px;
     width: 30px;
-    //  DECORATION
+    ////DECORATION
     border: none;
   }
-}
 
-@media (width > 1080px) {
-  #nav {
+  @media (width > 1080px) {
+    ////LENGTH
     height: 150px;
-
     &.down {
+      ////LENGTH
       height: 80px;
     }
-
-    .navigation {
-      display: flex;
-      gap: 5px;
-
-      a {
-        //    LENGTH
-        width: 115px;
-        min-width: 80px;
-        text-align: center;
-
-        &:where(:hover, :active, .active) {
-          font-weight: bold;
-        }
+    .navigation a {
+      ////LENGTH
+      width: 115px;
+      min-width: 80px;
+      ////TEXT
+      text-align: center;
+      &:where(:hover, :active, .active) {
+        ////TEXT
+        font-weight: bold;
       }
     }
-
-    .burger {
-      display: none;
-    }
   }
-}
-@media (width < 600px) {
-  #nav .options {
-    gap: 5px;
-    @media (width < 400px) {
-      .contact_us {
-        //// LENGTH
-        width: 80px;
-        p {
-          font-size: 0.75rem;
-        }
+  @media (width < 400px) {
+    .contact_us {
+      ////LENGTH
+      width: 80px;
+      p {
+        ////TEXT
+        font-size: 0.75rem;
       }
     }
   }
@@ -314,9 +329,9 @@ main > section {
     h1 {
       grid-area: 1 / 1 / 1 span / 1 span;
       align-self: end;
-      ////  LENGTH
+      ////LENGTH
       width: max(100%, 375px);
-      ////  TEXT
+      ////TEXT
       // font-size: 1.1rem;
       // font-weight: 800;
       @include bootstrap.h3;
@@ -358,21 +373,21 @@ main > section {
       }
     }
 
-    // @media (width > 600px) {
-    //   h1 {
-    //     ////  TEXT
-    //     font-size: clamp(1.3rem, 1.034rem + 0.71vw, 1.7rem);
-    //   }
+    //@media (width > 600px) {
+    //h1 {
+    //TEXT
+    //font-size: clamp(1.3rem, 1.034rem + 0.71vw, 1.7rem);
+    //}
 
-    //   > p {
-    //     //// TEXT
-    //     font-size: clamp(0.9rem, 0.6rem + 0.81vw, 1.1rem);
-    //   }
-    // }
+    //> p {
+    //TEXT
+    //font-size: clamp(0.9rem, 0.6rem + 0.81vw, 1.1rem);
+    //}
+    //}
   }
 }
 //SECTION: FOOTER
-///  COLORS
+///COLORS
 #footer {
   background-color: hsl(var(--secondary-bg));
 
