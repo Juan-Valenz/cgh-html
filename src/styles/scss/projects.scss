@@ -1,0 +1,383 @@
+//  PROJECTS
+
+//SECTION: HERO
+#hero .hero > div img {
+  max-height: 800px;
+}
+//SECTION: ABOUT
+/// POSITIONING AND STYLES
+#about {
+  ////LENGTH
+  width: 80%;
+  margin-inline: auto;
+
+  h2 {
+    text-align: center;
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+
+  p {
+    ////TEXT
+    text-align: justify;
+    font-size: 0.8rem;
+  }
+
+  @media (width > 1095px) {
+    h2 {
+      font-size: clamp(1.2rem, 1.02rem + 0.48vw, 1.6rem);
+    }
+
+    p {
+      font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
+    }
+  }
+}
+
+//SECTION: PROJECTS
+///  COLORS
+#projects {
+  .card {
+    background-color: hsl(var(--white));
+    .content {
+      h3 {
+        color: hsl(var(--txt-accent));
+      }
+      span {
+        color: hsl(var(--accent-bg));
+      }
+    }
+  }
+}
+
+/// POSITIONING AND STYLES
+#projects {
+  ////FLEX
+  display: grid;
+  justify-content: center;
+  gap: 30px;
+  //  LENGTH
+  margin: 80px auto;
+  max-width: 90vw;
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .cards {
+    ////FLEX
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    gap: 25px;
+    ////LENGTH
+    max-width: 90vw;
+  }
+
+  .card {
+    ////FLEX
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    gap: 15px;
+    //  LENGTH
+    padding-bottom: 10px;
+    //  DECORATION
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px hsl(var(--grey));
+    overflow: hidden;
+
+    img {
+      ////LENGTH
+      height: 180px;
+      width: 100%;
+      ////DECORATION
+      object-fit: cover;
+      object-position: center left;
+    }
+
+    .content {
+      ////FLEX
+      display: flex;
+      flex-direction: column;
+      margin-inline: 20px;
+
+      h3 {
+        //  LENGTH
+        margin-bottom: 20px;
+        //  TEXT
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        text-align: center;
+      }
+      > .list {
+        h4 {
+          ////GRID
+          display: grid;
+          grid-template-columns: 15px 1fr;
+          ////LENGTH
+          width: 234px;
+          max-width: 234px;
+          ////TEXT
+          font-weight: 400;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          ////DECORATION
+          overflow: hidden;
+          span {
+            font-weight: 900;
+          }
+        }
+      }
+
+      button {
+        width: 85px;
+        height: 30px;
+        font-weight: bold;
+        color: hsl(var(--txt-light));
+        background-color: hsl(var(--accent-bg));
+        border-radius: 5px;
+        border: none;
+        margin-top: 10px;
+        margin-inline: auto;
+        box-shadow: 3px 3px 0px hsl(var(--grey) / 0.8);
+        transition: linear 800ms box-shadow;
+        &:hover {
+          transition: linear 500ms box-shadow;
+          box-shadow: none;
+          // filter: brightness(125%);
+        }
+      }
+    }
+  }
+
+  @media (width > 600px) {
+    p {
+      font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
+    }
+  }
+
+  @media (width > 1090px) {
+    .cards {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+
+      .card {
+        width: 350px;
+      }
+    }
+  }
+}
+
+// SECTION: CONTACT
+
+#contact {
+  max-width: none;
+  .container {
+    ////FLEX
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ////LENGHT
+    width: auto;
+    height: auto;
+    min-height: calc(100vh - 90px);
+    margin: 0 20px 20px;
+    ////DECORATION
+    background: linear-gradient(-45deg, #ee7752, #ca870b9c, #23a6d5, #23d5ab);
+    background-size: auto;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    border-radius: 50px;
+
+    .form {
+      ////LENGTH
+      padding: 20px;
+      ////DECORATION
+      border-radius: 5px;
+      label,
+      input[type="checkbox"] {
+        cursor: pointer;
+      }
+      input[type="text"],
+      input[type="number"],
+      select,
+      textarea {
+        ////LENGHT
+        width: 100%;
+        padding: 12px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        ////TEXT
+        font-size: 0.8rem;
+        ////DECORATION
+        border: 1px solid hsl(var(--main-bg));
+        resize: vertical;
+        background-color: hsl(var(--secondary-bg) / 0.062);
+        border-radius: 8px;
+
+        @media (width > 600px) {
+          ////TEXT
+          font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
+        }
+      }
+
+      textarea {
+        ////LENGHT
+        min-height: 140px;
+      }
+
+      button {
+        background-color: hsl(var(--secondary-bg) / 0.2);
+        color: hsl(var(--txt-light));
+        ////LENGTH
+        padding: 15px 25px;
+        ////DECORATION
+        cursor: pointer;
+        border: none;
+        border: 1px solid hsl(var(--main-bg));
+        border-radius: 8px;
+
+        &:hover {
+          background-color: hsl(var(--accent-bg));
+        }
+      }
+      main {
+        .services > div {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          /////Custom checkbox
+          > label {
+            display: grid;
+            grid-template-columns: 35px 1fr;
+            align-items: center;
+            ////LENGTH
+            margin-bottom: 12px;
+            ////TEXT
+            font-size: 22px;
+            ////
+            cursor: pointer;
+            user-select: none;
+            /////Hide the browser's default checkbox
+            input {
+              ////POSITION
+              position: absolute;
+              opacity: 0;
+              height: 0;
+              width: 0;
+            }
+            .checkmark {
+              ////FLEX
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              ////LENGTH
+              height: 25px;
+              width: 25px;
+              ////DECORATION
+              background-color: hsl(var(--grey) / 0.8);
+              border: 1px solid hsl(var(--main-bg) / 0.6);
+              border-radius: 5px;
+              &:after {
+                content: "";
+                display: none;
+                ////Style the checkmark/indicator
+                ////LENGTH
+                width: 5px;
+                height: 10px;
+                ////DECORATION
+                border: solid hsl(var(--white));
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+              }
+              ~ span {
+                ////TEXT
+                width: fit-content;
+                height: fit-content;
+                font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
+              }
+            }
+            /////Hide the browser's default checkbox
+            input:checked {
+              ~ .checkmark {
+                background-color: hsl(var(--accent-bg));
+                ////Show the checkmark when checked
+                &::after {
+                  display: block;
+                }
+              }
+            }
+            &:hover input ~ .checkmark {
+              filter: brightness(95%);
+            }
+          }
+        }
+        .contact_info label,
+        .services > label,
+        > label,
+        button {
+          font-weight: bold;
+        }
+      }
+    }
+
+    header {
+      ////TEXT
+      text-align: center;
+
+      h2 {
+        color: hsl(var(--txt-light));
+        font-size: 2rem;
+      }
+
+      p {
+        color: hsl(var(--txt-light));
+      }
+    }
+
+    main {
+      float: left;
+      margin-top: 6px;
+      padding: 20px;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        column-gap: 10px;
+      }
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    @media screen and (width < 600px) {
+      ////LENGTH
+      padding-inline: 5%;
+      main,
+      button {
+        ////LENGTH
+        width: 100%;
+        margin-top: 0;
+      }
+
+      .form main .services > div {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (width > 1080px) {
+      main > .contact_info {
+        ////FLEX
+        flex-direction: row;
+      }
+    }
+  }
+}
