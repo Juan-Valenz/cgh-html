@@ -1,261 +1,6 @@
+@use "bootstrap";
+
 //  LAYOUT
-
-//SECTION: HOME
-#home {
-  ///COLORS
-  .hero {
-    span {
-      color: hsl(var(--txt-accent));
-    }
-  }
-
-  ///POSITIONING AND STYLES
-  ////LENGTH
-  height: 100vh;
-  height: 100dvh;
-  padding-top: 150px;
-  .hero {
-    background-image: url(../../images/bg_main.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    ////LENGHT
-    width: 80%;
-    height: 100%;
-    margin-inline: auto;
-    ////GRID
-    display: grid;
-    grid-template: 1fr 1fr 1fr 1fr / clamp(272px, 50% + 150px, 850px) 1fr;
-    justify-content: start;
-    align-items: center;
-
-    h1 {
-      grid-area: 1 / 1 / 1 span / 1 span;
-      align-self: end;
-      ////  LENGTH
-      width: max(100%, 375px);
-      ////  TEXT
-      font-size: 1.1rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      ////DECORATION
-      transition: 0.2s font-size;
-    }
-
-    > p {
-      grid-area: 2 / 1 / 2 span / 1 span;
-      ////TEXT
-      font-size: 0.8rem;
-      text-align: justify;
-      ////DECORATION
-      transition: 0.3s font-size;
-    }
-
-    @media (width > 600px) {
-      h1 {
-        ////  TEXT
-        font-size: clamp(1.3rem, 1.034rem + 0.71vw, 1.7rem);
-      }
-
-      > p {
-        //// TEXT
-        font-size: clamp(0.9rem, 0.6rem + 0.81vw, 1.1rem);
-      }
-    }
-  }
-}
-//SECTION: NAVIGATION
-////  COLORS
-#nav {
-  background-color: hsl(var(--main-bg));
-}
-
-.navigation {
-  background-color: hsl(var(--main-bg));
-
-  a:where(:hover, :active, .active) {
-    color: hsl(var(--txt-accent));
-  }
-  a:last-child {
-    background-color: hsl(var(--orange));
-    color: hsl(var(--txt-light));
-    p {
-      filter: brightness(95%);
-    }
-  }
-}
-
-.burger {
-  background-color: transparent;
-}
-
-.btn_language {
-  background-color: hsl(var(--grey) / 0.251);
-
-  &.active {
-    background-color: hsl(var(--accent-bg));
-    color: hsl(var(--main-bg));
-  }
-}
-
-#nav.down {
-  border-bottom-color: hsl(var(--accent-bg) / 0.3);
-}
-
-/// POSITIONING AND STYLES
-#nav {
-  //POSITION
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  //    LENGTH
-  width: 100%;
-  height: 80px;
-  transition: 0.3s height;
-
-  > div {
-    //    FLEX
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    //    LENGTH
-    width: 100%;
-    height: 100%;
-    padding-inline: 20px;
-  }
-
-  &.down {
-    //    DECORATION
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-  }
-}
-
-.logo {
-  ////POSITION
-  position: relative;
-  //    LENGTH
-  height: 80px;
-  width: 80px;
-  min-height: 80px;
-  min-width: 80px;
-}
-
-.options {
-  ////FLEX
-  display: flex;
-  gap: 35px;
-
-  .navigation {
-    display: none;
-    a {
-      ////FLEX
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      &:last-child {
-        ////TEXT
-        font-weight: bold;
-        ////DECORATION
-        box-shadow: 3px 3px 0px hsl(var(--grey));
-        border-radius: 5px;
-        p {
-          font-size: 0.95rem;
-        }
-      }
-    }
-    &.active {
-      ////POSITION
-      position: absolute;
-      inset: 80px 0 0 0;
-      ////FLEX
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      ////LENGTH
-      height: calc(100dvh - 80px);
-      ////DECORATION
-      transition: 1s height;
-
-      a {
-        ////FLEX
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        ////LENGTH
-        width: 100%;
-        min-height: 85px;
-        ////TEXT
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  .languages {
-    //    FLEX
-    display: flex;
-    gap: 5px;
-    //    TEXT
-    font-size: 0.95rem;
-
-    .btn_language {
-      //  FLEX
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      //    LENGTH
-      width: 55px;
-      height: 30px;
-      //    DECORATION
-      border-radius: 8px;
-
-      &.active {
-        //  TEXT
-        font-weight: 800;
-      }
-    }
-  }
-
-  .burger {
-    //  LENGTH
-    height: 30px;
-    width: 30px;
-    //  DECORATION
-    border: none;
-  }
-}
-
-@media (width > 1080px) {
-  #nav {
-    height: 150px;
-
-    &.down {
-      height: 80px;
-    }
-
-    .navigation {
-      display: flex;
-      gap: 5px;
-
-      a {
-        //    LENGTH
-        width: 115px;
-        min-width: 80px;
-        text-align: center;
-
-        &:where(:hover, :active, .active) {
-          font-weight: bold;
-        }
-      }
-    }
-
-    .burger {
-      display: none;
-    }
-  }
-}
 
 //SECTION: ABOUT
 /// POSITIONING AND STYLES
@@ -265,31 +10,34 @@
   margin-inline: auto;
 
   h2 {
-    text-align: center;
-    font-size: 1rem;
+    ////
     padding-bottom: 20px;
+    ////
+    text-align: center;
+    @include bootstrap.h2;
   }
 
   p {
     ////TEXT
     text-align: justify;
-    font-size: 0.8rem;
+
+    @include bootstrap.p-small;
   }
 
-  @media (width > 1095px) {
-    h2 {
-      font-size: clamp(1.2rem, 1.02rem + 0.48vw, 1.6rem);
-    }
+  // @media (width > 1095px) {
+  //   h2 {
+  //     font-size: clamp(1.2rem, 1.02rem + 0.48vw, 1.6rem);
+  //   }
 
-    p {
-      font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-    }
-  }
+  //   p {
+  //     font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
+  //   }
+  // }
 }
 
-//SECTION: SERVICES
-///  COLORS
-#services {
+//SECTION: PROJECTS
+#projects {
+  ///  COLORS
   .card {
     background-color: hsl(var(--white));
     .content {
@@ -301,10 +49,8 @@
       }
     }
   }
-}
 
-/// POSITIONING AND STYLES
-#services {
+  /// POSITIONING AND STYLES
   ////FLEX
   display: flex;
   flex-direction: column;
@@ -351,7 +97,7 @@
 
     img {
       ////LENGTH
-      height: 180px;
+      height: 250px;
       width: 100%;
       ////DECORATION
       object-fit: cover;
@@ -433,320 +179,184 @@
   }
 }
 
-// SECTION: CONTACT
+//SECTION: SERVICES
+#services {
+  ///  COLORS
+  .card {
+    background-color: hsl(var(--card-main-bg));
+    box-shadow: 5px 5px 0px hsl(var(--card-shadow-bg));
+    .content {
+      h3 {
+        color: hsl(var(--txt-accent));
+      }
+      button {
+        @include bootstrap.btn-call-to-action;
+      }
+    }
+  }
 
-#contact {
-  max-width: none;
-  .container {
+  /// POSITION / FLEX & GRID
+  ////FLEX
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  header {
     ////FLEX
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    ////LENGHT
-    width: auto;
-    height: auto;
-    min-height: calc(100vh - 90px);
-    margin: 0 20px 20px;
-    ////DECORATION
-    background: linear-gradient(-45deg, #ee7752, #ca870b9c, #23a6d5, #23d5ab);
-    background-size: auto;
-    background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
-    border-radius: 50px;
-
-    .form {
-      ////LENGTH
-      padding: 20px;
-      ////DECORATION
-      border-radius: 5px;
-      label,
-      input[type="checkbox"] {
-        cursor: pointer;
-      }
-      input[type="text"],
-      input[type="number"],
-      select,
-      textarea {
-        ////LENGHT
-        width: 100%;
-        padding: 12px;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        ////TEXT
-        font-size: 0.8rem;
-        ////DECORATION
-        border: 1px solid hsl(var(--main-bg));
-        resize: vertical;
-        background-color: hsl(var(--secondary-bg) / 0.062);
-        border-radius: 8px;
-
-        @media (width > 600px) {
-          ////TEXT
-          font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-        }
-      }
-
-      textarea {
-        ////LENGHT
-        min-height: 140px;
-      }
-
-      button {
-        background-color: hsl(var(--secondary-bg) / 0.2);
-        color: hsl(var(--txt-light));
-        ////LENGTH
-        padding: 15px 25px;
-        ////DECORATION
-        cursor: pointer;
-        border: none;
-        border: 1px solid hsl(var(--main-bg));
-        border-radius: 8px;
-
-        &:hover {
-          background-color: hsl(var(--accent-bg));
-        }
-      }
-      main {
-        .services > div {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          /////Custom checkbox
-          > label {
-            display: grid;
-            grid-template-columns: 35px 1fr;
-            align-items: center;
-            ////LENGTH
-            margin-bottom: 12px;
-            ////TEXT
-            font-size: 22px;
-            ////
-            cursor: pointer;
-            user-select: none;
-            /////Hide the browser's default checkbox
-            input {
-              ////POSITION
-              position: absolute;
-              opacity: 0;
-              height: 0;
-              width: 0;
-            }
-            .checkmark {
-              ////FLEX
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              ////LENGTH
-              height: 25px;
-              width: 25px;
-              ////DECORATION
-              background-color: hsl(var(--grey) / 0.8);
-              border: 1px solid hsl(var(--main-bg) / 0.6);
-              border-radius: 5px;
-              &:after {
-                content: "";
-                display: none;
-                ////Style the checkmark/indicator
-                ////LENGTH
-                width: 5px;
-                height: 10px;
-                ////DECORATION
-                border: solid hsl(var(--white));
-                border-width: 0 3px 3px 0;
-                transform: rotate(45deg);
-              }
-              ~ span {
-                ////TEXT
-                width: fit-content;
-                height: fit-content;
-                font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-              }
-            }
-            /////Hide the browser's default checkbox
-            input:checked {
-              ~ .checkmark {
-                background-color: hsl(var(--accent-bg));
-                ////Show the checkmark when checked
-                &::after {
-                  display: block;
-                }
-              }
-            }
-            &:hover input ~ .checkmark {
-              filter: brightness(95%);
-            }
-          }
-        }
-        .contact_info label,
-        .services > label,
-        > label,
-        button {
-          font-weight: bold;
-        }
-      }
-    }
-
-    header {
-      ////TEXT
-      text-align: center;
-
-      h2 {
-        color: hsl(var(--txt-light));
-        font-size: 2rem;
-      }
-
-      p {
-        color: hsl(var(--txt-light));
-      }
-    }
-
-    main {
-      float: left;
-      margin-top: 6px;
-      padding: 20px;
-
-      > div {
-        display: flex;
-        flex-direction: column;
-        column-gap: 10px;
-      }
-    }
-
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    @media screen and (width < 600px) {
-      ////LENGTH
-      padding-inline: 5%;
-      main,
-      button {
-        ////LENGTH
-        width: 100%;
-        margin-top: 0;
-      }
-
-      .form main .services > div {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (width > 1080px) {
-      main > .contact_info {
-        ////FLEX
-        flex-direction: row;
-      }
-    }
   }
-}
-
-//  FOOTER
-////  COLORS
-#footer {
-  background-color: hsl(var(--secondary-bg));
-
-  .share {
-    a {
-      .facebook {
-        fill: hsl(var(--facebook));
-      }
-
-      .linkedin {
-        fill: hsl(var(--linkedin));
-      }
-
-      .dribbble {
-        fill: hsl(var(--dribbble));
-      }
-    }
-  }
-
-  .credit {
-    color: hsl(var(--txt-light));
-
-    span {
-      color: hsl(var(--txt-accent));
-    }
-  }
-
-  .links a {
-    color: hsl(var(--txt-light));
-    border: hsl(var(--grey));
-
-    &:hover {
-      color: hsl(var(--txt-accent));
-    }
-  }
-}
-
-//// POSITIONING AND STYLES
-#footer {
-  ////TEXT
-  text-align: center;
-
-  .share {
-    ////LENGTH
-    padding: 2rem 0;
-
-    a {
-      display: inline-block;
-
-      svg {
-        ////LENGTH
-        height: 2rem;
-        width: 2rem;
-        margin: 0.3rem;
-        ////ANIMATION
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-        -webkit-animation-timing-function: ease-in-out;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        -webkit-animation-iteration-count: infinite;
-      }
-
-      &:hover svg {
-        cursor: pointer;
-        -moz-animation-name: bounce;
-      }
-    }
-  }
-
-  .links {
+  .cards {
     ////FLEX
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    ////TEXT
-    padding: 2rem 0;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 100px;
 
-    a {
+    .card {
+      ////FLEX
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:nth-child(even) {
+        img {
+          grid-area: 1/ 2 / span 1 / span 1;
+        }
+        .content {
+          grid-area: 1/ 1 / span 1 / span 1;
+        }
+      }
+      .content {
+        ////FLEX
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        ul {
+          ////FLEX
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    }
+    @media (width > 1090px) {
+      align-items: stretch;
+      .card {
+        ////FLEX
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        align-items: center;
+        height: 570px;
+      }
+    }
+  }
+  /// LENGTH AND STYLING
+  ////LENGTH
+  margin: 80px auto;
+  max-width: 90vw;
+  header {
+    ////LENGTH
+    margin-inline: auto;
+  }
+
+  .cards {
+    ////LENGTH
+    max-width: 90vw;
+    margin-inline: auto;
+    ////DECORATION
+    overflow-x: visible;
+
+    .card {
       ////LENGTH
-      width: 255.5px;
-      padding: 0.7rem 2rem;
-      ////TEXT
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      ////DECORATION
-      border-radius: 20px;
-      &:hover {
-        ////TEXT
-        font-weight: bold;
+      height: 570px;
+      width: 80vw;
+      min-width: 300px;
+      //// DECORATION
+      border-radius: 10px;
+      overflow: hidden;
+      > * {
+        ////LENGTH
+        height: 100%;
+        width: 100%;
+      }
+      img {
+        ////DECORATION
+        object-fit: cover;
+        object-position: center;
+      }
+      .content {
+        ////LENGTH
+        padding: 20px;
+
+        h3 {
+          ////LENGTH
+          margin-bottom: 20px;
+          ////TEXT
+          @include bootstrap.h4;
+          text-transform: uppercase;
+          text-align: center;
+        }
+        li {
+          ////LENGTH
+          width: fit-content;
+          max-width: 100%;
+          ////TEXT
+          @include bootstrap.h5;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          ////DECORATION
+          overflow: hidden;
+        }
+
+        button {
+          ////LENGTH
+          width: 100px;
+          height: 40px;
+          margin-top: 10px;
+          margin-inline: auto;
+          ////DECORATION
+          border-radius: 5px;
+          border: none;
+          ////ANIMATION
+          transition: linear 800ms box-shadow;
+          &:hover {
+            ////ANIMATION
+            transition: linear 500ms box-shadow;
+            ////DECORATION
+            box-shadow: none;
+          }
+        }
       }
     }
   }
 
-  .credit {
-    ////LENGTH
-    padding: 1.5rem;
-    ////TEXT
-    font-weight: lighter;
-
-    span {
+  /// TEXT
+  header {
+    text-align: center;
+    h2 {
+      @include bootstrap.h1;
+    }
+    p {
+      @include bootstrap.p-medium;
+    }
+  }
+  .cards .card .content {
+    h3 {
+      @include bootstrap.h4;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    li {
+      ////TEXT
+      @include bootstrap.h5;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    button {
       font-weight: bold;
+      font-size: 0.9rem;
     }
   }
 }
