@@ -101,50 +101,6 @@ main > section {
 
 #nav {
   background-color: hsl(var(--main-bg));
-}
-
-.navigation {
-  background-color: hsl(var(--main-bg));
-}
-.navigation a:where(:hover, :active, .active) {
-  color: hsl(var(--txt-accent));
-}
-
-.contact_us {
-  background-color: hsl(var(--orange));
-  color: hsl(var(--txt-light));
-}
-.contact_us p {
-  filter: brightness(95%);
-}
-
-.burger {
-  background-color: transparent;
-}
-
-.btn_language {
-  color: hsl(var(--text-dark));
-  background-color: hsl(var(--btn-main-bg)/0.251);
-  border-radius: 8px;
-  border: none;
-  transition: linear 800ms background-color;
-}
-.btn_language:hover {
-  background-color: hsl(var(--btn-accent-bg)/0.2);
-}
-.btn_language.active {
-  color: hsl(var(--txt-light));
-  background-color: hsl(var(--btn-accent-bg));
-}
-.btn_language.active {
-  font-weight: bold;
-}
-
-#nav.down {
-  border-bottom-color: hsl(var(--accent-bg)/0.3);
-}
-
-#nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -154,96 +110,136 @@ main > section {
   height: 80px;
   transition: 0.3s height;
 }
+#nav .navigation {
+  background-color: hsl(var(--main-bg));
+}
+#nav .navigation a:where(:hover, :active, .active) {
+  color: hsl(var(--txt-accent));
+}
+#nav .contact_us {
+  background-color: hsl(var(--btn-accent-bg));
+  color: hsl(var(--txt-light));
+}
+#nav .contact_us p {
+  filter: brightness(95%);
+}
+#nav .burger {
+  background-color: transparent;
+}
+#nav .language {
+  color: hsl(var(--text-dark));
+  background-color: hsl(var(--btn-main-bg)/0.251);
+  border-radius: 8px;
+  border: none;
+  transition: linear 200ms background-color, linear 100ms color, linear 200ms font-weight;
+}
+#nav .language:hover {
+  background-color: hsl(var(--btn-accent-bg)/0.2);
+}
+#nav.down {
+  border-bottom-color: hsl(var(--accent-bg)/0.3);
+}
 #nav > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  padding-inline: 20px;
 }
-#nav.down {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-}
-#nav .navigation a:where(:hover, :active, .active) {
-  font-weight: bold;
-}
-
-.logo {
+#nav .logo {
   position: relative;
-  height: 80px;
-  width: 80px;
-  min-height: 80px;
-  min-width: 80px;
 }
-
-.options {
+#nav .options {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
-.options .navigation {
+#nav .navigation {
   display: none;
 }
-.options .navigation a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.options .navigation.active {
+#nav .navigation.active {
   position: absolute;
   inset: 80px 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: calc(100dvh - 80px);
-  transition: 1s height;
 }
-.options .navigation.active a {
+#nav .navigation.active div {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#nav .navigation a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nav .navigation .language {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nav .contact_us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (width > 1080px) {
+  #nav .navigation {
+    display: flex;
+    gap: 5px;
+  }
+  #nav .burger {
+    display: none;
+  }
+}
+#nav.down {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+#nav > div {
+  width: 100%;
+  height: 100%;
+  padding-inline: 20px;
+}
+#nav .navigation a:where(:hover, :active, .active) {
+  font-weight: bold;
+}
+#nav .logo {
+  height: 80px;
+  width: 80px;
+  min-height: 80px;
+  min-width: 80px;
+}
+#nav .navigation.active {
+  height: calc(100dvh - 80px);
+  transition: 1s height;
+}
+#nav .navigation.active > * {
   width: 100%;
   min-height: 85px;
   font-size: 1.5rem;
 }
-.options .contact_us {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 105px;
-  min-width: 80px;
+#nav .navigation.active .language {
+  width: 150px;
+  height: 60px;
+}
+#nav .contact_us {
+  width: 115px;
+  height: 37px;
   text-align: center;
   font-weight: bold;
+  font-size: 0.95rem;
   box-shadow: 3px 3px 0px hsl(var(--grey));
   border-radius: 5px;
 }
-.options .contact_us p {
-  font-size: 0.95rem;
+#nav .contact_us.fi {
+  font-size: 0.85rem;
 }
-.options .languages {
-  display: flex;
-  gap: 5px;
-  font-size: 0.95rem;
-}
-.options .languages .btn_language {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 55px;
-  height: 30px;
-  border-radius: 8px;
-}
-.options .languages .btn_language.active {
-  font-weight: 800;
-}
-.options .burger {
+#nav .burger {
   height: 30px;
   width: 30px;
   border: none;
 }
-
 @media (width > 1080px) {
   #nav {
     height: 150px;
@@ -251,49 +247,43 @@ main > section {
   #nav.down {
     height: 80px;
   }
-  #nav .navigation {
-    display: flex;
-    gap: 5px;
-  }
-  #nav .navigation a {
+  #nav .navigation > * {
     width: 115px;
     min-width: 80px;
     text-align: center;
   }
-  #nav .navigation a:where(:hover, :active, .active) {
+  #nav .navigation > *:where(:hover, :active, .active) {
     font-weight: bold;
   }
-  #nav .burger {
-    display: none;
+  #nav .navigation .language {
+    height: 35px;
   }
 }
-@media (width < 600px) {
-  #nav .options {
-    gap: 5px;
+@media (width < 400px) {
+  #nav .contact_us {
+    width: 105px;
+    height: 37px;
+    font-size: 0.85rem;
   }
-}
-@media (width < 600px) and (width < 400px) {
-  #nav .options .contact_us {
-    width: 80px;
-  }
-  #nav .options .contact_us p {
+  #nav .contact_us.fi {
     font-size: 0.75rem;
   }
 }
+
 #hero {
+  position: relative;
+  overflow: hidden;
   height: 100vh;
   height: 100dvh;
   padding-top: 150px;
-  position: relative;
-  overflow: hidden;
 }
 #hero .hero span {
   color: hsl(var(--txt-accent));
 }
+#hero .hero > div {
+  background-color: hsl(var(--whitish));
+}
 #hero .hero {
-  width: 90%;
-  height: 100%;
-  margin-inline: auto;
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr/clamp(272px, 50% + 150px, 850px) 1fr;
   justify-content: start;
@@ -302,6 +292,21 @@ main > section {
 #hero .hero h1 {
   grid-area: 1/1/1 span/1 span;
   align-self: end;
+}
+#hero .hero > p {
+  grid-area: 2/1/2 span/1 span;
+}
+#hero .hero > div {
+  position: absolute;
+  left: 65%;
+  z-index: -1;
+}
+#hero .hero {
+  width: 90%;
+  height: 100%;
+  margin-inline: auto;
+}
+#hero .hero h1 {
   width: max(100%, 375px);
   font-size: 1.3rem;
   font-weight: bold;
@@ -314,7 +319,6 @@ main > section {
   }
 }
 #hero .hero > p {
-  grid-area: 2/1/2 span/1 span;
   font-size: 0.83rem;
   text-align: justify;
   transition: 0.3s font-size;
@@ -325,12 +329,8 @@ main > section {
   }
 }
 #hero .hero > div {
-  position: absolute;
-  left: 65%;
-  z-index: -1;
   width: 600px;
   transition: translate 1s linear;
-  background-color: hsl(var(--whitish));
   backdrop-filter: blur(11.5px);
   -webkit-backdrop-filter: blur(11.5px);
 }
@@ -346,6 +346,7 @@ main > section {
 
 #footer {
   background-color: hsl(var(--secondary-bg));
+  text-align: center;
 }
 #footer .share a .facebook {
   fill: hsl(var(--facebook));
@@ -369,15 +370,21 @@ main > section {
 #footer .links a:hover {
   color: hsl(var(--txt-accent));
 }
-
-#footer {
-  text-align: center;
+#footer .share a {
+  display: inline-block;
+}
+#footer .share .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 #footer .share {
   padding: 2rem 0;
 }
-#footer .share a {
-  display: inline-block;
+#footer .share a:hover svg {
+  cursor: pointer;
+  -moz-animation-name: bounce;
 }
 #footer .share a svg {
   height: 2rem;
@@ -392,15 +399,7 @@ main > section {
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
 }
-#footer .share a:hover svg {
-  cursor: pointer;
-  -moz-animation-name: bounce;
-}
 #footer .links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
   padding: 2rem 0;
 }
 #footer .links a {

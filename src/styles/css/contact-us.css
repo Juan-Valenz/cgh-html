@@ -1,133 +1,37 @@
-#about {
-  width: 80%;
-  margin-inline: auto;
-}
-#about h2 {
-  text-align: center;
-  font-size: 1rem;
-  padding-bottom: 20px;
-}
-#about p {
-  text-align: justify;
-  font-size: 0.8rem;
-}
-@media (width > 1095px) {
-  #about h2 {
-    font-size: clamp(1.2rem, 1.02rem + 0.48vw, 1.6rem);
-  }
-  #about p {
-    font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-  }
-}
-
-#services .card {
-  background-color: hsl(var(--white));
-}
-#services .card .content h3 {
-  color: hsl(var(--txt-accent));
-}
-#services .card .content span {
-  color: hsl(var(--accent-bg));
-}
-
-#services {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin: 80px auto;
-}
-#services header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-inline: auto;
-  text-align: center;
-}
-#services .cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  max-width: 90vw;
-  margin-inline: auto;
-  overflow-x: visible;
-}
-#services .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-  gap: 15px;
-  width: 80vw;
-  min-width: 300px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 5px 5px 0px hsl(var(--grey));
-  overflow: hidden;
-}
-#services .card img {
-  height: 180px;
+#contact_infomation {
   width: 100%;
-  object-fit: cover;
-  object-position: center left;
-}
-#services .card .content {
-  display: flex;
-  flex-direction: column;
-  margin-inline: 20px;
-}
-#services .card .content h3 {
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  font-weight: 800;
-  text-align: center;
-}
-#services .card .content > .list h4 {
+  height: 150px;
   display: grid;
-  grid-template-columns: 15px 1fr;
-  width: 234px;
-  max-width: 234px;
-  font-weight: 400;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  grid-template-columns: 1fr 2fr;
+  padding-inline: 30px;
+  max-width: 90vw;
 }
-#services .card .content > .list h4 span {
-  font-weight: 900;
+#contact_infomation > * {
+  width: 100%;
 }
-#services .card .content button {
-  width: 85px;
-  height: 30px;
-  font-weight: bold;
-  color: hsl(var(--txt-light));
-  background-color: hsl(var(--accent-bg));
-  border-radius: 5px;
-  border: none;
-  margin-top: 10px;
-  margin-inline: auto;
-  box-shadow: 3px 3px 0px hsl(var(--grey)/0.8);
-  transition: linear 800ms box-shadow;
+#contact_infomation img {
+  width: 100%;
+  min-width: 360px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
-#services .card .content button:hover {
-  transition: linear 500ms box-shadow;
-  box-shadow: none;
+#contact_infomation .info {
+  display: grid;
+  gap: 30px;
+  align-items: start;
 }
-@media (width > 600px) {
-  #services p {
-    font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-  }
+#contact_infomation .info > * {
+  height: fit-content;
+  width: fit-content;
 }
-@media (width > 1090px) {
-  #services .cards {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-  #services .cards .card {
-    width: 350px;
-  }
+#contact_infomation main {
+  display: grid;
+  gap: 50px;
+  padding-left: 30px;
+}
+#contact_infomation main a {
+  color: hsl(var(--txt-accent));
 }
 
 #contact {
@@ -293,40 +197,4 @@
   #contact .container main > .contact_info {
     flex-direction: row;
   }
-}
-
-#contact_infomation {
-  width: 100%;
-  height: 150px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding-inline: 30px;
-  max-width: 90vw;
-}
-#contact_infomation > * {
-  width: 100%;
-}
-#contact_infomation img {
-  width: 100%;
-  min-width: 360px;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-#contact_infomation .info {
-  display: grid;
-  gap: 30px;
-  align-items: start;
-}
-#contact_infomation .info > * {
-  height: fit-content;
-  width: fit-content;
-}
-#contact_infomation main {
-  display: grid;
-  gap: 50px;
-  padding-left: 30px;
-}
-#contact_infomation main a {
-  color: hsl(var(--txt-accent));
 }

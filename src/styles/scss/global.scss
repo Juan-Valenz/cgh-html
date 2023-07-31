@@ -72,8 +72,8 @@ main > section {
 }
 
 //SECTION: NAVIGATION
-///COLORS
 #nav {
+  ///COLORS
   background-color: hsl(var(--main-bg));
 
   .navigation {
@@ -84,7 +84,7 @@ main > section {
     }
   }
   .contact_us {
-    background-color: hsl(var(--orange));
+    background-color: hsl(var(--btn-accent-bg));
     color: hsl(var(--txt-light));
     p {
       filter: brightness(95%);
@@ -95,8 +95,8 @@ main > section {
     background-color: transparent;
   }
 
-  .btn_language {
-    @include bootstrap.btn-multiple-options;
+  .language {
+    @include bootstrap.btn-option;
   }
 
   &.down {
@@ -123,6 +123,7 @@ main > section {
   .options {
     ////FLEX
     display: flex;
+    align-items: center;
     gap: 20px;
   }
   .navigation {
@@ -137,7 +138,7 @@ main > section {
       justify-content: flex-start;
       align-items: center;
 
-      a {
+      div {
         ////FLEX
         display: flex;
         justify-content: center;
@@ -150,23 +151,18 @@ main > section {
       justify-content: center;
       align-items: center;
     }
+    .language {
+      ////FLEX
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
   .contact_us {
     ////FLEX
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .languages {
-    ////FLEX
-    display: flex;
-    gap: 5px;
-    .btn_language {
-      ////FLEX
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
 
   @media (width > 1080px) {
@@ -178,15 +174,11 @@ main > section {
       display: none;
     }
   }
-  @media (width < 600px) {
-    .options {
-      gap: 5px;
-    }
-  }
   /// LENGTH AND STYLES
   ////LENGTH
   width: 100%;
   height: 80px;
+  ////ANIMATION
   transition: 0.3s height;
 
   &.down {
@@ -221,42 +213,33 @@ main > section {
       height: calc(100dvh - 80px);
       ////DECORATION
       transition: 1s height;
-      a {
+      > * {
         ////LENGTH
         width: 100%;
         min-height: 85px;
         ////TEXT
         font-size: 1.5rem;
       }
+      .language {
+        ////LENGTH
+        width: 150px;
+        height: 60px;
+      }
     }
   }
   .contact_us {
     ////LENGTH
-    width: 105px;
-    min-width: 80px;
-    text-align: center;
+    width: 115px;
+    height: 37px;
     ////TEXT
+    text-align: center;
     font-weight: bold;
+    font-size: 0.95rem;
     ////DECORATION
     box-shadow: 3px 3px 0px hsl(var(--grey));
     border-radius: 5px;
-    p {
-      font-size: 0.95rem;
-    }
-  }
-  .languages {
-    ////TEXT
-    font-size: 0.95rem;
-    .btn_language {
-      ////LENGTH
-      width: 55px;
-      height: 30px;
-      ////DECORATION
-      border-radius: 8px;
-      &.active {
-        ////TEXT
-        font-weight: 800;
-      }
+    &.fi {
+      font-size: 0.85rem;
     }
   }
 
@@ -275,23 +258,31 @@ main > section {
       ////LENGTH
       height: 80px;
     }
-    .navigation a {
-      ////LENGTH
-      width: 115px;
-      min-width: 80px;
-      ////TEXT
-      text-align: center;
-      &:where(:hover, :active, .active) {
+    .navigation {
+      > * {
+        ////LENGTH
+        width: 115px;
+        min-width: 80px;
         ////TEXT
-        font-weight: bold;
+        text-align: center;
+        &:where(:hover, :active, .active) {
+          ////TEXT
+          font-weight: bold;
+        }
+      }
+      .language {
+        height: 35px;
       }
     }
   }
   @media (width < 400px) {
     .contact_us {
       ////LENGTH
-      width: 80px;
-      p {
+      width: 105px;
+      height: 37px;
+      ////TEXT
+      font-size: 0.85rem;
+      &.fi {
         ////TEXT
         font-size: 0.75rem;
       }
@@ -306,29 +297,45 @@ main > section {
     span {
       color: hsl(var(--txt-accent));
     }
+    > div {
+      background-color: hsl(var(--whitish));
+    }
   }
 
-  ///POSITIONING AND STYLES
-  ////LENGTH
-  height: 100vh;
-  height: 100dvh;
-  padding-top: 150px;
+  /// POSITION & DISPLAY
   position: relative;
   overflow: hidden;
   .hero {
-    ////LENGHT
-    width: 90%;
-    height: 100%;
-    margin-inline: auto;
     ////GRID
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr / clamp(272px, 50% + 150px, 850px) 1fr;
     justify-content: start;
     align-items: center;
-
     h1 {
       grid-area: 1 / 1 / 1 span / 1 span;
       align-self: end;
+    }
+    > p {
+      grid-area: 2 / 1 / 2 span / 1 span;
+    }
+    > div {
+      position: absolute;
+      left: 65%;
+      z-index: -1;
+    }
+  }
+  /// LENGTH AND STYLES
+  ////LENGTH
+  height: 100vh;
+  height: 100dvh;
+  padding-top: 150px;
+  .hero {
+    ////LENGHT
+    width: 90%;
+    height: 100%;
+    margin-inline: auto;
+
+    h1 {
       ////LENGTH
       width: max(100%, 375px);
       ////TEXT
@@ -342,24 +349,18 @@ main > section {
     }
 
     > p {
-      grid-area: 2 / 1 / 2 span / 1 span;
       ////TEXT
       // font-size: 0.8rem;
       @include bootstrap.p_small;
       text-align: justify;
-      ////DECORATION
+      ////ANIMATION
       transition: 0.3s font-size;
     }
     > div {
-      position: absolute;
-      left: 65%;
-      z-index: -1;
       ////LENGTH
       width: 600px;
       ////ANIMATION
       transition: translate 1s linear;
-      /// COLOR
-      background-color: hsl(var(--whitish));
       //// DECORATION
       backdrop-filter: blur(11.5px);
       -webkit-backdrop-filter: blur(11.5px);
@@ -372,23 +373,11 @@ main > section {
         translate: -400px 500px;
       }
     }
-
-    //@media (width > 600px) {
-    //h1 {
-    //TEXT
-    //font-size: clamp(1.3rem, 1.034rem + 0.71vw, 1.7rem);
-    //}
-
-    //> p {
-    //TEXT
-    //font-size: clamp(0.9rem, 0.6rem + 0.81vw, 1.1rem);
-    //}
-    //}
   }
 }
 //SECTION: FOOTER
-///COLORS
 #footer {
+  ///COLORS
   background-color: hsl(var(--secondary-bg));
 
   .share {
@@ -423,20 +412,31 @@ main > section {
       color: hsl(var(--txt-accent));
     }
   }
-}
 
-//// POSITIONING AND STYLES
-#footer {
+  /// POSITION & DISPLAY
+  .share {
+    a {
+      display: inline-block;
+    }
+    .links {
+      ////FLEX
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+  /// LENGTH AND STYLES
   ////TEXT
   text-align: center;
-
   .share {
     ////LENGTH
     padding: 2rem 0;
-
     a {
-      display: inline-block;
-
+      &:hover svg {
+        cursor: pointer;
+        -moz-animation-name: bounce;
+      }
       svg {
         ////LENGTH
         height: 2rem;
@@ -452,20 +452,10 @@ main > section {
         animation-iteration-count: infinite;
         -webkit-animation-iteration-count: infinite;
       }
-
-      &:hover svg {
-        cursor: pointer;
-        -moz-animation-name: bounce;
-      }
     }
   }
 
   .links {
-    ////FLEX
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
     ////TEXT
     padding: 2rem 0;
 
