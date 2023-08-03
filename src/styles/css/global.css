@@ -60,9 +60,12 @@ body {
   color: hsl(var(--txt-dark));
 }
 
-body > header,
-main > section {
+body > header {
   min-height: 600px;
+}
+
+main > section {
+  margin-block: calc(35px + 3vw);
 }
 
 a {
@@ -78,11 +81,11 @@ button {
 body > main {
   display: grid;
   align-items: start;
+  grid-template-columns: 1fr;
   row-gap: 20px;
 }
 
 main > section {
-  /* LENGTH */
   width: auto;
   padding-top: 80px;
 }
