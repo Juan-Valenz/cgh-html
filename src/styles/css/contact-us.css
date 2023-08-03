@@ -1,5 +1,6 @@
 #contact_infomation > div {
   background-color: hsl(var(--card-main-bg));
+  box-shadow: 5px 5px 0px hsl(var(--grey));
   display: grid;
   grid-template: 50% 50%/1fr;
   max-width: 80vw;
@@ -8,7 +9,6 @@
   margin-inline: auto;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 5px 5px 0px hsl(var(--grey));
 }
 #contact_infomation > div main a {
   color: hsl(var(--txt-accent));
