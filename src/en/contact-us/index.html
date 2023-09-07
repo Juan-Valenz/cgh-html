@@ -66,91 +66,133 @@
       </div>
     </div>
   </header>
-  <main>
+  <main class="N-btm">
     <section id="contact_infomation">
-      <div>
-
-        <div class="portrait">
-          <img src="../../styles/imgs/senior-busniessman-looking-away-generative.png"
-            alt="Picture of the ceo in a suit.">
-        </div>
-        <div class="info">
-          <h2>Timo Halonen</h2>
+      <img src="../../styles/imgs/building_site_2.jpg">
+      <div class="content">
+        <div>
+          <header>
+            <h2>Timo Halonen</h2>
+            <!-- <p>CEO</p> -->
+          </header>
           <main>
-            <p>CEO</p>
-            <a href="mailto:timo.halonen@cgh.fi">timo.halonen&#64;cgh.fi</a>
-            <a href="tel:+358 500 403 606">+358 500 403 606</a>
+            <div>
+              <div class="icon">
+                <svg viewBox="0 0 512 512" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+                    fill="hsl(var(--black))" />
+                </svg>
+              </div>
+              <a href="mailto:timo.halonen@cgh.fi">timo.halonen&#64;cgh.fi</a>
+            </div>
+            <div>
+              <div class="icon">
+                <svg viewBox="0 0 512 512" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"
+                    fill="hsl(var(--black))" />
+                </svg>
+              </div>
+              <a href="tel:+358 500 403 606">+358 500 403 606</a>
+              <!-- <a class="icon copy">
+                <svg viewBox="0 0 512 512" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"
+                    fill="hsl(var(--black))" />
+                </svg>
+              </a> -->
+            </div>
           </main>
         </div>
       </div>
+    </section>
+
+    <section id="contact">
+      <form>
+        <div>
+          <header>
+            <h2>Contact Us</h2>
+          </header>
+          <main>
+            <section class="contact_info">
+              <label>
+                <p>Name:</p>
+                <input type="text" id="fname" name="firstname" placeholder="Koko nimesi..">
+              </label>
+              <label>
+                <p>Email:</p>
+                <input type="text" placeholder="Your email..">
+              </label>
+              <label>
+                <p>Phone Number:</p>
+                <input type="text" placeholder="Your phone number..">
+              </label>
+            </section>
+            <section class="services">
+              <label>Services:</label>
+              <div>
+                <label>
+                  <div class="checkmark">
+                    <input type="checkbox" name="idk">
+                    <span></span>
+                  </div>
+                  <span>I don't know</span>
+                </label>
+                <label>
+                  <div class="checkmark">
+                    <input type="checkbox" name="Consulting">
+                    <span></span>
+                  </div>
+                  <span>Constulting services</span>
+                </label>
+                <label>
+                  <div class="checkmark">
+                    <input type="checkbox" name="Management">
+                    <span></span>
+                  </div>
+                  <span>Operational services</span>
+                </label>
+                <label>
+                  <div class="checkmark">
+                    <input type="checkbox" name="Finance">
+                    <span></span>
+                  </div>
+                  <span>Finance</span>
+                </label>
+                <label>
+                  <div class="checkmark">
+                    <input type="checkbox" name="Other">
+                    <span></span>
+                  </div>
+                  <span>Other</span>
+                </label>
+              </div>
+            </section>
+            <section class="content">
+
+              <label>
+                <p>Topic:</p>
+                <input type="text" placeholder="Topic...">
+              </label>
+              <label>
+                <p>Message:</p>
+                <textarea onkeypress="textAreaAdjust(this)" placeholder="Write a message..."></textarea>
+              </label>
+            </section>
+
+          </main>
+          <button type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
     </section>
 
     <section id="map">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1963.4390505929998!2d24.758276799999994!3d60.520482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468e0829e36daf7d%3A0x65f857e5bbadc00e!2sKeh%C3%A4tie%2033%2C%2005200%20Nurmij%C3%A4rvi!5e0!3m2!1sen!2sfi!4v1690216440466!5m2!1sen!2sfi"
         style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <div class="form">
-          <header>
-            <h2>Contact Us</h2>
-            <p>Embark on a Conversation: Whether It's Your Ongoing Endeavor or Future Project, Let's Discuss and Shape
-              Your Vision Together.</p>
-          </header>
-          <main>
-            <div class="contact_info">
-              <div>
-                <label for="contact_fname">Name:</label>
-                <input type="text" id="contact_fname" name="firstname" placeholder="full name..">
-              </div>
-              <div>
-                <label for="contact_email">Email:</label>
-                <input type="text" id="contact_email" name="email" placeholder="your email..">
-              </div>
-              <div>
-                <label for="contact_phone_number">Phone number:</label>
-                <input type="text" id="contact_phone_number" name="phone number" placeholder="your phone number..">
-              </div>
-            </div>
-            <div class="services">
-              <label>Services:</label>
-              <div>
-                <label>
-                  <input type="checkbox" name="idk">
-                  <span class="checkmark"></span>
-                  <span>I don't know</span>
-                </label>
-                <label>
-                  <input type="checkbox" name="Consulting">
-                  <span class="checkmark"></span>
-                  <span>Consulting services</span>
-                </label>
-                <label>
-                  <input type="checkbox" name="Management">
-                  <span class="checkmark"></span>
-                  <span>Operational services</span>
-                </label>
-                <label>
-                  <input type="checkbox" name="Finance">
-                  <span class="checkmark"></span>
-                  <span>Financial Management</span>
-                </label>
-                <label>
-                  <input type="checkbox" name="Other">
-                  <span class="checkmark"></span>
-                  <span>Other</span>
-                </label>
-              </div>
-            </div>
-            <label for="contact_topic">Topic:</label>
-            <input type="text" id="contact_topic" name="topic" placeholder="What would you like to ask us?">
-            <label for="contact_subject">Message:</label>
-            <textarea id="subject" name="contact_subject" placeholder="Write a message.."></textarea>
-            <button type="submit">Submit</button>
-          </main>
-        </div>
-      </div>
     </section>
 
   </main>
