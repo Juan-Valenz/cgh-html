@@ -1,266 +1,351 @@
-#contact_infomation > div {
-  background-color: hsl(var(--card-main-bg));
-  box-shadow: 5px 5px 0px hsl(var(--grey));
-  display: grid;
-  grid-template: 50% 50%/1fr;
-  max-width: 80vw;
-  width: 310px;
-  height: 380px;
-  margin-inline: auto;
-  border-radius: 5px;
+#contact_infomation {
+  box-shadow: 0px 3.2px 7.2px hsl(var(--black)/0.132), 0px 0.6px 1.8px hsl(var(--black)/0.108);
+  position: relative;
   overflow: hidden;
+  max-width: none;
+  width: 100%;
+  height: 600px;
 }
-#contact_infomation > div main a {
-  color: hsl(var(--txt-accent));
+#contact_infomation .content {
+  /* From https://css.glass */
+  background: hsl(var(--black)/0.5);
+  background: hsl(var(--black)/0.3);
+  backdrop-filter: blur(8.9px);
+  -webkit-backdrop-filter: blur(8.9px);
+  color: hsl(var(--txt-light));
 }
-@media (width > 1180px) {
-  #contact_infomation > div .portrait {
-    background-color: hsl(var(--grey)/0.4);
-  }
+#contact_infomation .content::after {
+  border: 1px solid hsl(var(--yellow-dark));
 }
-#contact_infomation > div .portrait {
-  grid-area: 1/1/1 span/1 span;
+#contact_infomation .content header::after {
+  color: hsl(var(--txt-light)/0.8);
+}
+#contact_infomation .content header p {
+  color: hsl(var(--txt-light)/0.8);
+}
+#contact_infomation .content main .icon {
+  background-color: hsl(var(--white));
+  border-radius: 50%;
+}
+#contact_infomation > * {
+  position: absolute;
+  inset: 0;
+}
+#contact_infomation img {
+  object-fit: cover;
+  object-position: center center;
+}
+#contact_infomation .content {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
-#contact_infomation > div .info {
-  grid-area: 2/1/1 span/1 span;
+#contact_infomation .content::after {
+  position: absolute;
+  content: "";
+  inset: auto;
+}
+#contact_infomation .content > * {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+#contact_infomation .content > * > * {
   display: flex;
   flex-direction: column;
+}
+#contact_infomation .content > * header {
+  position: relative;
   align-items: center;
 }
-#contact_infomation > div .info main {
+#contact_infomation .content > * header::after {
+  position: absolute;
+  content: "CEO";
+  inset: auto;
+  bottom: -15px;
+}
+#contact_infomation .content > * main {
+  gap: 10px;
+}
+#contact_infomation .content > * main > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#contact_infomation .content > * main > div .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (width < 600px) {
+  #contact_infomation .content > * {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: none;
+    gap: 60px;
+  }
+  #contact_infomation .content main {
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#contact_infomation img {
+  width: 100%;
+  height: 100%;
+}
+#contact_infomation .content::after {
+  height: 100px;
+}
+#contact_infomation .content main .icon {
+  width: 30px;
+  aspect-ratio: 1/1;
+  background-color: hsl(var(--white));
+  border-radius: 50%;
+}
+#contact_infomation .content main .icon svg {
+  width: 60%;
+}
+@media (width < 600px) {
+  #contact_infomation .content::after {
+    height: 0px;
+    width: 200px;
+  }
+}
+
+#contact {
+  max-width: none;
+  width: 100%;
+  padding: 10px;
+}
+#contact form {
+  color: hsl(var(--txt-dark));
+  background-color: hsl(var(--card-background));
+  box-shadow: 0px 3.2px 7.2px hsl(var(--black)/0.132), 0px 0.6px 1.8px hsl(var(--black)/0.108);
+}
+#contact form main .services label .checkmark span {
+  background-color: hsl(var(--grey)/0.8);
+  border: 1px solid hsl(var(--card-background)/0.6);
+}
+#contact form main .services label .checkmark span:after {
+  border: solid hsl(var(--card-background));
+}
+#contact form main .services label .checkmark input:checked ~ span {
+  background-color: hsl(var(--green-dark));
+}
+#contact form main .services label:hover input ~ span,
+#contact form main .services label input:focus ~ span {
+  filter: brightness(95%);
+}
+#contact form input,
+#contact form textarea,
+#contact form button {
+  color: hsl(var(--txt-dark)/0.8);
+  background-color: hsl(var(--black)/0.07);
+  box-shadow: 0px 3.2px 7.2px hsl(var(--black)/0.112), 0px 0.6px 1.8px hsl(var(--black)/0.108);
+}
+#contact form input {
+  border: none;
+  border-bottom: 3px solid hsl(var(--grey)/0.8);
+  border-radius: 3px;
+}
+#contact form textarea {
+  border: 2px solid hsl(var(--card-background)/0.3);
+}
+#contact form button {
+  border: none;
+  color: hsl(var(--txt-light));
+  background-color: hsl(var(--blue-muted)/0.7);
+  box-shadow: 0px 3.2px 7.2px hsl(var(--black)/0.132), 0px 0.6px 1.8px hsl(var(--black)/0.108);
+  border-radius: 5px;
+}
+#contact form button:hover {
+  background-color: hsl(var(--blue)/0.7);
+}
+#contact form > div {
+  display: grid;
+  gap: 50px;
+}
+#contact form > div header {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+#contact form > div main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+#contact form > div main > section {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+#contact form > div main .services label {
+  display: grid;
+  grid-template-columns: 50px auto;
+  align-items: center;
+}
+#contact form > div main .services label div {
+  position: relative;
+  justify-self: center;
+}
+#contact form > div main .services label div input {
+  position: absolute;
+}
+#contact form > div main .services label span {
+  align-self: center;
+}
+#contact form > div main .services > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(250px + 15%));
+  gap: 5px;
+}
+#contact form > div main .services > div .checkmark span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contact form > div main .services > div .checkmark span:after {
+  display: none;
+}
+#contact form > div main .services > div .checkmark input:checked ~ span::after {
+  display: block;
+}
 @media (width > 600px) {
-  #contact_infomation > div {
-    grid-template: 1fr/40% 60%;
+  #contact .contact_info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   }
-  #contact_infomation > div .portrait {
-    align-items: center;
-  }
-  #contact_infomation > div .info {
-    grid-area: 1/2/1 span/1 span;
-    justify-content: center;
+  #contact button {
+    justify-self: end;
   }
 }
-#contact_infomation > div .portrait {
-  height: 100%;
+#contact form {
+  min-width: none;
   width: 100%;
+  padding-block: 50px;
+  padding-inline: 10px;
+  border-radius: 20px;
 }
-#contact_infomation > div .portrait img {
-  height: 130px;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  overflow: hidden;
-  object-fit: cover;
-  object-position: center center;
-}
-#contact_infomation > div .info {
-  height: 100%;
+#contact form > div header {
   text-align: center;
 }
-#contact_infomation > div .info > * {
-  height: fit-content;
-  width: fit-content;
+#contact form > div header h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 @media (width > 600px) {
-  #contact_infomation > div {
-    width: 100%;
-    height: 300px;
-  }
-  #contact_infomation > div .portrait img {
-    height: 80%;
-  }
-  #contact_infomation > div .info {
-    grid-area: 1/2/1 span/1 span;
-    justify-content: center;
+  #contact form > div header h2 {
+    font-size: clamp(1.9rem, 1.63rem + 0.73vw, 2.5rem);
   }
 }
-@media (width > 1180px) {
-  #contact_infomation > div {
-    height: 450px;
-    max-width: 900px;
+#contact form > div header p {
+  font-size: 0.83rem;
+}
+@media (width > 600px) {
+  #contact form > div header p {
+    font-size: clamp(0.83rem, 0.31rem + 0.85vw, 1.33rem);
+  }
+}
+#contact form > div main section {
+  width: 100%;
+}
+#contact form > div main .services label .checkmark input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+#contact form > div main .services label .checkmark span {
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+}
+#contact form > div main .services label .checkmark span:after {
+  content: "";
+  width: 5px;
+  height: 10px;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+#contact form > div main .services label > span {
+  width: fit-content;
+  height: fit-content;
+  font-size: 0.6rem;
+  font-weight: normal;
+}
+@media (width > 600px) {
+  #contact form > div main .services label > span {
+    font-size: clamp(0.7rem, 0.4rem + 0.85vw, 1.3rem);
+  }
+}
+#contact form label,
+#contact form button {
+  font-size: 0.83rem;
+  font-weight: bold;
+}
+@media (width > 600px) {
+  #contact form label,
+  #contact form button {
+    font-size: clamp(0.93rem, 0.61rem + 0.85vw, 1.63rem);
+  }
+}
+#contact form label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+#contact form input,
+#contact form textarea {
+  font-size: 0.83rem;
+}
+@media (width > 600px) {
+  #contact form input,
+  #contact form textarea {
+    font-size: clamp(0.83rem, 0.31rem + 0.85vw, 1.33rem);
+  }
+}
+#contact form input {
+  width: 100%;
+  padding: 3px;
+}
+#contact form textarea {
+  resize: vertical;
+  min-width: 100%;
+  min-height: 150px;
+  padding: 3px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+#contact form button {
+  height: 53px;
+}
+@media (width > 600px) {
+  #contact {
+    padding: 15px;
+  }
+  #contact form button {
+    width: 200px;
+  }
+}
+@media (width > 1080px) {
+  #contact {
+    padding: 30px;
   }
 }
 
 #map {
   min-width: 100%;
   max-width: none;
-  height: 300px;
-  padding-top: 0;
+  height: 500px;
   border-radius: 5px;
   overflow: hidden;
 }
 #map iframe {
   width: 100%;
   height: 100%;
-}
-
-#contact {
-  max-width: none;
-}
-#contact .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-  height: auto;
-  min-height: calc(100vh - 90px);
-  margin: 0 20px 20px;
-  background: linear-gradient(-45deg, #ee7752, rgba(202, 135, 11, 0.6117647059), #23a6d5, #23d5ab);
-  background-size: auto;
-  background-size: 400% 400%;
-  animation: gradient 20s ease infinite;
-  border-radius: 50px;
-}
-#contact .container .form {
-  padding: 20px;
-  border-radius: 5px;
-}
-#contact .container .form label,
-#contact .container .form input[type=checkbox] {
-  cursor: pointer;
-}
-#contact .container .form input[type=text],
-#contact .container .form input[type=number],
-#contact .container .form select,
-#contact .container .form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  font-size: 0.8rem;
-  border: 1px solid hsl(var(--main-bg));
-  resize: vertical;
-  background-color: hsl(var(--secondary-bg)/0.062);
-  border-radius: 8px;
-}
-@media (width > 600px) {
-  #contact .container .form input[type=text],
-  #contact .container .form input[type=number],
-  #contact .container .form select,
-  #contact .container .form textarea {
-    font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-  }
-}
-#contact .container .form textarea {
-  min-height: 140px;
-}
-#contact .container .form button {
-  background-color: hsl(var(--secondary-bg)/0.2);
-  color: hsl(var(--txt-light));
-  padding: 15px 25px;
-  cursor: pointer;
-  border: none;
-  border: 1px solid hsl(var(--main-bg));
-  border-radius: 8px;
-}
-#contact .container .form button:hover {
-  background-color: hsl(var(--accent-bg));
-}
-#contact .container .form main .services > div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-#contact .container .form main .services > div > label {
-  display: grid;
-  grid-template-columns: 35px 1fr;
-  align-items: center;
-  margin-bottom: 12px;
-  font-size: 22px;
-  cursor: pointer;
-  user-select: none;
-}
-#contact .container .form main .services > div > label input {
-  position: absolute;
-  opacity: 0;
-  height: 0;
-  width: 0;
-}
-#contact .container .form main .services > div > label .checkmark {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 25px;
-  width: 25px;
-  background-color: hsl(var(--grey)/0.8);
-  border: 1px solid hsl(var(--main-bg)/0.6);
-  border-radius: 5px;
-}
-#contact .container .form main .services > div > label .checkmark:after {
-  content: "";
-  display: none;
-  width: 5px;
-  height: 10px;
-  border: solid hsl(var(--white));
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-}
-#contact .container .form main .services > div > label .checkmark ~ span {
-  width: fit-content;
-  height: fit-content;
-  font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-}
-#contact .container .form main .services > div > label input:checked ~ .checkmark {
-  background-color: hsl(var(--accent-bg));
-}
-#contact .container .form main .services > div > label input:checked ~ .checkmark::after {
-  display: block;
-}
-#contact .container .form main .services > div > label:hover input ~ .checkmark,
-#contact .container .form main .services > div > label input:focus ~ .checkmark {
-  filter: brightness(95%);
-}
-#contact .container .form main .contact_info label,
-#contact .container .form main .services > label,
-#contact .container .form main > label,
-#contact .container .form main button {
-  font-weight: bold;
-}
-#contact .container header {
-  text-align: center;
-}
-#contact .container header h2 {
-  color: hsl(var(--txt-light));
-  font-size: 2rem;
-}
-#contact .container header p {
-  color: hsl(var(--txt-light));
-}
-#contact .container main {
-  float: left;
-  margin-top: 6px;
-  padding: 20px;
-}
-#contact .container main > div {
-  display: flex;
-  flex-direction: column;
-  column-gap: 10px;
-}
-#contact .container .row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-@media screen and (width < 600px) {
-  #contact .container {
-    padding-inline: 5%;
-  }
-  #contact .container main,
-  #contact .container button {
-    width: 100%;
-    margin-top: 0;
-  }
-  #contact .container .form main .services > div {
-    grid-template-columns: 1fr;
-  }
-}
-@media (width > 1080px) {
-  #contact .container main > .contact_info {
-    flex-direction: row;
-  }
 }

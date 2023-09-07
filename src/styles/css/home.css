@@ -36,7 +36,7 @@
   color: hsl(var(--txt-accent));
 }
 #projects .card .content span {
-  color: hsl(var(--accent-bg));
+  color: hsl(var(--accent));
 }
 #projects header {
   display: flex;
@@ -104,12 +104,12 @@
   height: 30px;
   font-weight: bold;
   color: hsl(var(--txt-light));
-  background-color: hsl(var(--accent-bg));
+  background-color: hsl(var(--accent));
   border-radius: 5px;
   border: none;
   margin-top: 10px;
   margin-inline: auto;
-  box-shadow: 3px 3px 0px hsl(var(--grey)/0.8);
+  box-shadow: 3px 3px 0px hsl(var(--btn-shadow)/0.8);
   transition: linear 800ms box-shadow;
 }
 #projects .card .content button:hover {
@@ -140,16 +140,16 @@
   max-width: 90vw;
 }
 #services .card {
-  background-color: hsl(var(--card-main-bg));
-  box-shadow: 5px 5px 0px hsl(var(--card-shadow-bg));
+  background-color: hsl(var(--card-background));
+  box-shadow: 5px 5px 0px hsl(var(--card-shadow));
 }
 #services .card .content h3 {
   color: hsl(var(--txt-accent));
 }
 #services .card .content button {
   color: hsl(var(--txt-light));
-  background-color: hsl(var(--btn-accent-bg));
-  box-shadow: 3px 3px 0px hsl(var(--btn-shadow-bg)/0.8);
+  background-color: hsl(var(--btn-accent));
+  box-shadow: 3px 3px 0px hsl(var(--btn-shadow)/0.8);
   font-weight: bold;
   border-radius: 5px;
   border: none;

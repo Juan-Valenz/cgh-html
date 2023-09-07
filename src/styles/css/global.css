@@ -1,35 +1,66 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 :root {
   --black: 0 0% 8%;
-  --blackish: 210 3% 15%;
-  --grey: 0 0% 70%;
-  --whitish: 0 0% 94%;
+  --black-light: 218 30% 9%;
+  --grey-dark: 0 0% 51%;
+  --grey: 0 0% 75%;
+  --white-dark: 0 0% 95%;
   --white: 0 0% 100%;
-  --blue-dark: 218 50% 40%;
-  --blue: 218 100% 63%;
-  --bluish: 180 61% 50%;
+  --blue-dark: 218 50% 11%;
+  --blue-dark-muted: 218 74% 9%;
+  --blue: 218 76% 34%;
+  --blue-muted: 218 50% 40%;
+  --blue-light: 218 100% 63%;
+  --blue-light-muted: 218 65% 59%;
   --red: 0 100% 50%;
+  --green-dark: 106 100% 28%;
   --green: 106 100% 63%;
   --brown: 30 100% 32%;
   --orange: 24 100% 63%;
   --yellow-dark: 55 100% 43%;
   --test-color: hsl(213, 100%, 50%);
   --test-color: hsl(24, 100%, 63%);
-  --test-color: hsl(0, 0%, 70%);
-  --main-bg: var(--whitish);
-  --secondary-bg: var(--black);
-  --accent-bg: var(--blue-dark);
-  --card-main-bg: var(--white);
-  --card-secondary-bg: var(--whitish);
-  --card-accent-bg: var(--accent-bg);
-  --card-shadow-bg: var(--grey);
-  --btn-main-bg: var(--grey);
-  --btn-secondary-bg: var(--blue);
-  --btn-accent-bg: var(--accent-bg);
-  --btn-shadow-bg: var(--grey);
+  --test-color: hsla(0, 0%, 0%, 0.725);
+  --test-color: hsl(0, 0%, 51%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: #122a52;
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: #141414;
+  --test-color: #10151e;
+  --test-color: #828282;
+  --test-color: #bfbfbf;
+  --test-color: #f2f2f2;
+  --test-color: #0e182a;
+  --test-color: #154599;
+  --test-color: #4287ff;
+  --disruptive: 0 62.8% 30.6%;
+  --disruptive-foreground: 210 40% 98%;
+  --ring: 221.2 83.2% 53.3%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --background: var(--white-dark);
+  --foreground: var(--black-light);
+  --accent: var(--blue);
+  --muted: var(--blue-dark-muted);
+  --shadow: var(--grey);
+  --card-background: var(--white);
+  --card-foreground: var(--white-dark);
+  --card-accent: var(--accent);
+  --card-shadow: var(--shadow);
+  --btn-background: var(--grey);
+  --btn-foreground: var(--blue-light);
+  --btn-accent: var(--accent);
+  --btn-shadow: var(--shadow);
   --txt-dark: var(--black);
   --txt-light: var(--white);
-  --txt-accent: var(--blue-dark);
+  --txt-accent: var(--blue);
+  --txt-destructive: var(--red);
+  --txt-warning: var(--orange);
   --facebook: 221, 44%, 41%;
   --linkedin: 201, 100%, 35%;
   --dribbble: 337, 79%, 61%;
@@ -56,16 +87,39 @@ html.noOverflow {
 }
 
 body {
-  background-color: hsl(var(--main-bg));
+  background-color: hsl(var(--background));
   color: hsl(var(--txt-dark));
 }
-
 body > header {
   min-height: 600px;
 }
-
-main > section {
-  margin-block: calc(35px + 3vw);
+body > main {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 150px;
+  margin-block: 150px;
+}
+body > main.N-btm {
+  margin-bottom: 0;
+}
+body > main.N-tp {
+  margin-top: 0;
+}
+body > main > section {
+  width: auto;
+}
+@media (width < 1180px) {
+  body > main > section.container {
+    margin-inline: 30px;
+  }
+}
+@media (width > 1180px) {
+  body > main > section {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+  }
 }
 
 a {
@@ -78,32 +132,8 @@ button {
   cursor: pointer;
 }
 
-body > main {
-  display: grid;
-  align-items: start;
-  grid-template-columns: 1fr;
-  row-gap: 20px;
-}
-
-main > section {
-  width: auto;
-  padding-top: 80px;
-}
-@media (width < 1180px) {
-  main > section.container {
-    margin-inline: 30px;
-  }
-}
-@media (width > 1180px) {
-  main > section {
-    width: 100%;
-    max-width: 1180px;
-    margin-inline: auto;
-  }
-}
-
 #nav {
-  background-color: hsl(var(--main-bg));
+  background-color: hsl(var(--background));
   position: fixed;
   top: 0;
   left: 0;
@@ -114,13 +144,13 @@ main > section {
   transition: 0.3s height;
 }
 #nav .navigation {
-  background-color: hsl(var(--main-bg));
+  background-color: hsl(var(--background));
 }
 #nav .navigation a:where(:hover, :active, .active) {
   color: hsl(var(--txt-accent));
 }
 #nav .contact_us {
-  background-color: hsl(var(--btn-accent-bg));
+  background-color: hsl(var(--btn-accent));
   color: hsl(var(--txt-light));
 }
 #nav .contact_us p {
@@ -131,16 +161,16 @@ main > section {
 }
 #nav .language {
   color: hsl(var(--text-dark));
-  background-color: hsl(var(--btn-main-bg)/0.251);
+  background-color: hsl(var(--btn-background)/0.251);
   border-radius: 8px;
   border: none;
   transition: linear 200ms background-color, linear 100ms color, linear 200ms font-weight;
 }
 #nav .language:hover {
-  background-color: hsl(var(--btn-accent-bg)/0.2);
+  background-color: hsl(var(--btn-accent)/0.2);
 }
 #nav.down {
-  border-bottom-color: hsl(var(--accent-bg)/0.3);
+  border-bottom-color: hsl(var(--accent)/0.3);
 }
 #nav > div {
   display: flex;
@@ -348,7 +378,7 @@ main > section {
 }
 
 #footer {
-  background-color: hsl(var(--secondary-bg));
+  background-color: hsl(var(--foreground));
   text-align: center;
 }
 #footer .share a .facebook {

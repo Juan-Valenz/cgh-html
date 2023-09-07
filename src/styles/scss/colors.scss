@@ -1,23 +1,51 @@
 @mixin colors-test {
   --test-color: hsl(213, 100%, 50%);
   --test-color: hsl(24, 100%, 63%);
-  --test-color: hsl(0, 0%, 70%);
+  --test-color: hsla(0, 0%, 0%, 0.725);
+  --test-color: hsl(0, 0%, 51%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: #122a52;
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: hsl(218, 76%, 34%);
+  --test-color: #141414;
+  --test-color: #10151e;
+  --test-color: #828282;
+  --test-color: #bfbfbf;
+  --test-color: #f2f2f2;
+  --test-color: #0e182a;
+  --test-color: #154599;
+  --test-color: #4287ff;
+
+  --disruptive: 0 62.8% 30.6%;
+  --disruptive-foreground: 210 40% 98%;
+  --ring: 221.2 83.2% 53.3%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
 }
 
 @mixin colors {
   // base colors
   --black: 0 0% 8%;
-  --blackish: 210 3% 15%;
-  --grey: 0 0% 70%;
-  --whitish: 0 0% 94%;
+  --black-light: 218 30% 9%;
+  --grey-dark: 0 0% 51%;
+  --grey: 0 0% 75%;
+  --white-dark: 0 0% 95%;
   --white: 0 0% 100%;
   // blues
-  --blue-dark: 218 50% 40%;
-  --blue: 218 100% 63%;
-  --bluish: 180 61% 50%;
+  --blue-dark: 218 50% 11%;
+  --blue-dark-muted: 218 74% 9%;
+  --blue: 218 76% 34%;
+  --blue-muted: 218 50% 40%;
+  --blue-light: 218 100% 63%;
+  --blue-light-muted: 218 65% 59%;
   // reds
   --red: 0 100% 50%;
   // greens
+  --green-dark: 106 100% 28%;
   --green: 106 100% 63%;
   // browns
   --brown: 30 100% 32%;
@@ -25,27 +53,34 @@
   --orange: 24 100% 63%;
   // orange
   --yellow-dark: 55 100% 43%;
+
+  // --blue-dark: 222.2 47.4% 11.2%;
 }
 
 @mixin color-theme {
+
   //  HSL !!!
-  --main-bg: var(--whitish);
-  --secondary-bg: var(--black);
-  --accent-bg: var(--blue-dark);
+  --background: var(--white-dark);
+  --foreground: var(--black-light);
+  --accent: var(--blue);
+  --muted: var(--blue-dark-muted);
+  --shadow: var(--grey);
 
-  --card-main-bg: var(--white);
-  --card-secondary-bg: var(--whitish);
-  --card-accent-bg: var(--accent-bg);
-  --card-shadow-bg: var(--grey);
+  --card-background: var(--white);
+  --card-foreground: var(--white-dark);
+  --card-accent: var(--accent);
+  --card-shadow: var(--shadow);
 
-  --btn-main-bg: var(--grey);
-  --btn-secondary-bg: var(--blue);
-  --btn-accent-bg: var(--accent-bg);
-  --btn-shadow-bg: var(--grey);
+  --btn-background: var(--grey);
+  --btn-foreground: var(--blue-light);
+  --btn-accent: var(--accent);
+  --btn-shadow: var(--shadow);
 
   --txt-dark: var(--black);
   --txt-light: var(--white);
-  --txt-accent: var(--blue-dark);
+  --txt-accent: var(--blue);
+  --txt-destructive: var(--red);
+  --txt-warning: var(--orange);
 
   --facebook: 221, 44%, 41%;
   --linkedin: 201, 100%, 35%;
@@ -55,8 +90,8 @@
 @mixin btn-call-to-action {
   ///COLORS
   color: hsl(var(--txt-light));
-  background-color: hsl(var(--btn-accent-bg));
-  box-shadow: 3px 3px 0px hsl(var(--btn-shadow-bg) / 0.8);
+  background-color: hsl(var(--btn-accent));
+  box-shadow: 3px 3px 0px hsl(var(--btn-shadow) / 0.8);
   &:hover {
     ////DECORATION
     box-shadow: none;
@@ -77,13 +112,13 @@
 @mixin btn-multiple-options {
   ///COLORS
   color: hsl(var(--text-dark));
-  background-color: hsl(var(--btn-main-bg) / 0.251);
+  background-color: hsl(var(--btn-background) / 0.251);
   &:hover {
-    background-color: hsl(var(--btn-accent-bg) / 0.2);
+    background-color: hsl(var(--btn-accent) / 0.2);
   }
   &.active {
     color: hsl(var(--txt-light));
-    background-color: hsl(var(--btn-accent-bg));
+    background-color: hsl(var(--btn-accent));
   }
   /// LENGTH AND STYLES
   &.active {
@@ -99,9 +134,9 @@
 @mixin btn-option {
   ///COLORS
   color: hsl(var(--text-dark));
-  background-color: hsl(var(--btn-main-bg) / 0.251);
+  background-color: hsl(var(--btn-background) / 0.251);
   &:hover {
-    background-color: hsl(var(--btn-accent-bg) / 0.2);
+    background-color: hsl(var(--btn-accent) / 0.2);
   }
   /// LENGTH AND STYLES
   ////DECORATION

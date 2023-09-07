@@ -32,7 +32,7 @@
   color: hsl(var(--txt-accent));
 }
 #services .card .content span {
-  color: hsl(var(--accent-bg));
+  color: hsl(var(--accent));
 }
 
 #services {
@@ -129,7 +129,7 @@
   margin-inline: auto;
   font-weight: bold;
   color: hsl(var(--txt-light));
-  background-color: hsl(var(--accent-bg));
+  background-color: hsl(var(--accent));
   border-radius: 5px;
   border: none;
   box-shadow: 3px 3px 0px hsl(var(--grey)/0.8);
@@ -174,9 +174,9 @@
   margin-top: 6px;
   margin-bottom: 16px;
   font-size: 0.8rem;
-  border: 1px solid hsl(var(--main-bg));
+  border: 1px solid hsl(var(--background));
   resize: vertical;
-  background-color: hsl(var(--secondary-bg)/0.062);
+  background-color: hsl(var(--foreground)/0.062);
   border-radius: 8px;
 }
 @media (width > 600px) {
@@ -191,16 +191,16 @@
   min-height: 140px;
 }
 #contact .container .form button {
-  background-color: hsl(var(--secondary-bg)/0.2);
+  background-color: hsl(var(--foreground)/0.2);
   color: hsl(var(--txt-light));
   padding: 15px 25px;
   cursor: pointer;
   border: none;
-  border: 1px solid hsl(var(--main-bg));
+  border: 1px solid hsl(var(--background));
   border-radius: 8px;
 }
 #contact .container .form button:hover {
-  background-color: hsl(var(--accent-bg));
+  background-color: hsl(var(--accent));
 }
 #contact .container .form main .services > div {
   display: grid;
@@ -228,7 +228,7 @@
   height: 25px;
   width: 25px;
   background-color: hsl(var(--grey)/0.8);
-  border: 1px solid hsl(var(--main-bg)/0.6);
+  border: 1px solid hsl(var(--background)/0.6);
   border-radius: 5px;
 }
 #contact .container .form main .services > div > label .checkmark:after {
@@ -246,7 +246,7 @@
   font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
 }
 #contact .container .form main .services > div > label input:checked ~ .checkmark {
-  background-color: hsl(var(--accent-bg));
+  background-color: hsl(var(--accent));
 }
 #contact .container .form main .services > div > label input:checked ~ .checkmark::after {
   display: block;

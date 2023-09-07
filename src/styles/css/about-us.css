@@ -1,9 +1,10 @@
 #about {
   width: 80%;
   padding-block: 180px;
+  margin-inline: auto;
 }
 #about main span {
-  color: hsl(var(--accent-bg));
+  color: hsl(var(--accent));
 }
 #about main {
   display: flex;
@@ -24,12 +25,10 @@
 #about main p {
   text-align: justify;
   font-size: 0.83rem;
+  font-weight: bold;
 }
 @media (width > 600px) {
   #about main p {
     font-size: clamp(0.83rem, 0.31rem + 0.85vw, 1.33rem);
   }
-}
-#about main p span {
-  font-weight: bold;
 }

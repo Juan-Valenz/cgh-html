@@ -6,7 +6,7 @@
 #about {
   ///COLORS
   main span {
-    color: hsl(var(--accent-bg));
+    color: hsl(var(--accent));
   }
   /// POSITION & DISPLAY
 
@@ -19,6 +19,7 @@
   ////LENGTH
   width: 80%;
   padding-block: 180px;
+  margin-inline: auto;
 
   h2 {
     text-align: center;
@@ -32,9 +33,7 @@
       text-align: justify;
       // font-size: 0.8rem;
       @include bootstrap.p_small;
-      span {
-        font-weight: bold;
-      }
+      font-weight: bold;
     }
   }
 }

@@ -30,16 +30,41 @@ html.noOverflow {
 }
 
 body {
-  background-color: hsl(var(--main-bg));
+  background-color: hsl(var(--background));
   color: hsl(var(--txt-dark));
-}
-body > header {
-  min-height: 600px;
-}
-main > section {
-  margin-block: calc(35px + 3vw);
-}
+  > header {
+    min-height: 600px;
+  }
+  > main {
+    /// POSITION & DISPLAY
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 150px;
+    margin-block: 150px;
+    &.N-btm {
+      margin-bottom: 0;
+    }
+    &.N-tp {
+      margin-top: 0;
+    }
+    > section {
+      ////LENGTH
+      width: auto;
+      @media (width < 1180px) {
+        &.container {
+          margin-inline: 30px;
+        }
+      }
 
+      @media (width > 1180px) {
+        width: 100%;
+        max-width: 1180px;
+        margin-inline: auto;
+      }
+    }
+  }
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -50,53 +75,20 @@ button {
   cursor: pointer;
 }
 
-body > main {
-  display: grid;
-  align-items: start;
-  grid-template-columns: 1fr;
-  row-gap: 20px;
-}
-main > section {
-  ////LENGTH
-  width: auto;
-  padding-top: 80px;
-  @media (width < 1180px) {
-    &.container {
-      margin-inline: 30px;
-    }
-  }
-
-  @media (width > 1180px) {
-    width: 100%;
-    max-width: 1180px;
-    margin-inline: auto;
-  }
-  // h2 {
-  //   position: relative;
-  //   a {
-  //     position: absolute;
-  //     right: 0;
-  //     top: 0;
-  //     height: 100%;
-  //     aspect-ratio: 1 / 1;
-  //   }
-  // }
-}
-
 //SECTION: NAVIGATION
 #nav {
   ///COLORS
-  background-color: hsl(var(--main-bg));
+  background-color: hsl(var(--background));
 
   .navigation {
-    background-color: hsl(var(--main-bg));
+    background-color: hsl(var(--background));
 
     a:where(:hover, :active, .active) {
       color: hsl(var(--txt-accent));
     }
   }
   .contact_us {
-    background-color: hsl(var(--btn-accent-bg));
+    background-color: hsl(var(--btn-accent));
     color: hsl(var(--txt-light));
     p {
       filter: brightness(95%);
@@ -112,7 +104,7 @@ main > section {
   }
 
   &.down {
-    border-bottom-color: hsl(var(--accent-bg) / 0.3);
+    border-bottom-color: hsl(var(--accent) / 0.3);
   }
 
   /// POSITION & DISPLAY
@@ -391,7 +383,7 @@ main > section {
 //SECTION: FOOTER
 #footer {
   ///COLORS
-  background-color: hsl(var(--secondary-bg));
+  background-color: hsl(var(--foreground));
 
   .share {
     a {

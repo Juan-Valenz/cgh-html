@@ -1,107 +1,387 @@
+@use "bootstrap";
+
 //  CONTACT US
 
 // SECTION: CONTACT INFORMATION
 #contact_infomation {
-  > div {
-    ///COLORS
-    background-color: hsl(var(--card-main-bg));
-    box-shadow: 5px 5px 0px hsl(var(--grey));
-    main a {
-      color: hsl(var(--txt-accent));
+  /// COLORS
+  box-shadow: 0px 3.2px 7.2px hsl(var(--black) / 0.132),
+    0px 0.6px 1.8px hsl(var(--black) / 0.108);
+  .content {
+    /* From https://css.glass */
+    background: hsl(var(--black) / 0.5);
+    background: hsl(var(--black) / 0.3);
+    // background: hsl(var(--black) / 0.2);
+    backdrop-filter: blur(8.9px);
+    -webkit-backdrop-filter: blur(8.9px);
+    color: hsl(var(--txt-light));
+    &::after {
+      border: 1px solid hsl(var(--yellow-dark));
+      // border: 1px solid hsl(var(--black));
     }
-
-    @media (width > 1180px) {
-      .portrait {
-        background-color: hsl(var(--grey) / 0.4);
+    header {
+      &::after {
+        color: hsl(var(--txt-light) / 0.8);
+      }
+      p {
+        color: hsl(var(--txt-light) / 0.8);
       }
     }
-    /// POSITION & DISPLAY
-    ////GRID
-    display: grid;
-    grid-template: 50% 50% / 1fr;
-    .portrait {
-      grid-area: 1 / 1 / 1 span / 1 span;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    main .icon {
+      background-color: hsl(var(--white));
+      border-radius: 50%;
     }
-    .info {
-      grid-area: 2 / 1 / 1 span / 1 span;
-      ////GRID
-      display: flex;
-      flex-direction: column;
+  }
+
+  /// POSITION & DISPLAY
+  position: relative;
+  overflow: hidden;
+  > * {
+    position: absolute;
+    inset: 0;
+  }
+  img {
+    object-fit: cover;
+    object-position: center center;
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      position: absolute;
+      content: "";
+      inset: auto;
+    }
+    > * {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
       align-items: center;
-      main {
-        ////GRID
+      gap: 30px;
+      > * {
         display: flex;
         flex-direction: column;
-        gap: 15px;
       }
-    }
-    @media (width > 600px) {
-      grid-template: 1fr / 40% 60%;
-      .portrait {
+      header {
+        position: relative;
         align-items: center;
-      }
-      .info {
-        grid-area: 1 / 2 / 1 span / 1 span;
-        justify-content: center;
-      }
-    }
-    /// LENGTH AND STYLES
-    ////LENGTH
-    max-width: 80vw;
-    width: 310px;
-    height: 380px;
-    margin-inline: auto;
-    ////DECORATION
-    border-radius: 5px;
-    overflow: hidden;
-    .portrait {
-      height: 100%;
-      width: 100%;
-      img {
-        ////LENGTH
-        height: 130px;
-        aspect-ratio: 1 / 1;
-        ////DECORATION
-        border-radius: 100%;
-        overflow: hidden;
-        object-fit: cover;
-        object-position: center center;
-      }
-    }
-    .info {
-      height: 100%;
-      // padding-inline: 30px;
-      text-align: center;
-      > * {
-        ////LENGTH
-        height: fit-content;
-        width: fit-content;
-      }
-    }
-
-    @media (width > 600px) {
-      width: 100%;
-      height: 300px;
-      .portrait {
-        img {
-          height: 80%;
+        &::after {
+          position: absolute;
+          content: "CEO";
+          inset: auto;
+          bottom: -15px;
         }
       }
-      .info {
-        grid-area: 1 / 2 / 1 span / 1 span;
-        justify-content: center;
+      main {
+        gap: 10px;
+        > div {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          // .copy {
+          //   width: 0px;
+          //   transition: all .5s ease-in;
+          // }
+          // &:hover > .copy,
+          // .copy:hover {
+          //   position: absolute;
+          //   inset: auto;
+          //   right: -15px;
+          //   width: 30px;
+          // }
+        }
       }
     }
-    @media (width > 1180px) {
-      height: 450px;
-      max-width: 900px;
+  }
+  @media (width < 600px) {
+    .content {
+      > * {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: none;
+        gap: 60px;
+      }
+      main {
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  /// LENGTH AND STYLES
+  max-width: none;
+  width: 100%;
+  height: 600px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .content {
+    &::after {
+      height: 100px;
+    }
+    main .icon {
+      width: 30px;
+      aspect-ratio: 1 / 1;
+      background-color: hsl(var(--white));
+      border-radius: 50%;
+      svg {
+        width: 60%;
+      }
+    }
+  }
+  @media (width < 600px) {
+    .content::after {
+      height: 0px;
+      width: 200px;
     }
   }
 }
 
+// SECTION: CONTACT
+#contact {
+  ///COLORS
+  form {
+    color: hsl(var(--txt-dark));
+    background-color: hsl(var(--card-background));
+    // border: 5px double hsl(var(--grey));
+    box-shadow: 0px 3.2px 7.2px hsl(var(--black) / 0.132),
+      0px 0.6px 1.8px hsl(var(--black) / 0.108);
+    main {
+      .services {
+        label {
+          .checkmark {
+            span {
+              background-color: hsl(var(--grey) / 0.8);
+              border: 1px solid hsl(var(--card-background) / 0.6);
+              &:after {
+                border: solid hsl(var(--card-background));
+              }
+            }
+            input:checked ~ span {
+              background-color: hsl(var(--green-dark));
+            }
+          }
+          &:hover input ~ span,
+          input:focus ~ span {
+            filter: brightness(95%);
+          }
+        }
+      }
+    }
+    input,
+    textarea,
+    button {
+      color: hsl(var(--txt-dark) / 0.8);
+      background-color: hsl(var(--black) / 0.07);
+      box-shadow: 0px 3.2px 7.2px hsl(var(--black) / 0.112),
+        0px 0.6px 1.8px hsl(var(--black) / 0.108);
+    }
+    input {
+      border: none;
+      border-bottom: 3px solid hsl(var(--grey) / 0.8);
+      border-radius: 3px;
+    }
+    textarea {
+      border: 2px solid hsl(var(--card-background) / 0.3);
+    }
+    button {
+      border: none;
+      color: hsl(var(--txt-light));
+      background-color: hsl(var(--blue-muted) / 0.7);
+      box-shadow: 0px 3.2px 7.2px hsl(var(--black) / 0.132),
+        0px 0.6px 1.8px hsl(var(--black) / 0.108);
+      border-radius: 5px;
+      &:hover {
+        background-color: hsl(var(--blue) / 0.7);
+      }
+    }
+  }
+  /// POSITION & DISPLAY
+  ////FLEX
+  form > div {
+    ////GRID
+    display: grid;
+    gap: 50px;
+    header {
+      ////GRID
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+    main {
+      ////GRID
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      > section {
+        ////FLEX
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .services {
+        ////GRID
+        // display: grid;
+
+        label {
+          ////GRID
+          display: grid;
+          grid-template-columns: 50px auto;
+          align-items: center;
+          div {
+            position: relative;
+            justify-self: center;
+            input {
+              position: absolute;
+            }
+          }
+          span {
+            align-self: center;
+          }
+        }
+        > div {
+          ////GRID
+          display: grid;
+          grid-template-columns: repeat(auto-fill, calc(250px + 15%));
+          gap: 5px;
+
+          .checkmark {
+            span {
+              ////FLEX
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &:after {
+                display: none;
+              }
+            }
+            input:checked ~ span::after {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (width > 600px) {
+    .contact_info {
+      //GRID
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    }
+    button {
+      justify-self: end;
+    }
+  }
+
+  /// LENGTH AND STYLES
+  max-width: none;
+  width: 100%;
+  padding: 10px;
+  form {
+    min-width: none;
+    width: 100%;
+    padding-block: 50px;
+    padding-inline: 10px;
+    border-radius: 20px;
+    > div {
+      header {
+        text-align: center;
+        h2 {
+          @include bootstrap.h1;
+        }
+        p {
+          @include bootstrap.p_small;
+        }
+      }
+      main {
+        section {
+          width: 100%;
+        }
+        .services label {
+          .checkmark {
+            input {
+              opacity: 0;
+              //// LENGTH
+              height: 0;
+              width: 0;
+            }
+            span {
+              ////LENGTH
+              height: 25px;
+              width: 25px;
+              ////DECORATION
+              border-radius: 5px;
+              &:after {
+                content: "";
+                /////Style the checkmark/indicator
+                ////LENGTH
+                width: 5px;
+                height: 10px;
+                ////DECORATION
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+              }
+            }
+          }
+          > span {
+            ////LENGTH
+            width: fit-content;
+            height: fit-content;
+            @include bootstrap.p_tiny;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+    label,
+    button {
+      @include bootstrap.h5;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    input,
+    textarea {
+      @include bootstrap.p_small;
+    }
+    input {
+      width: 100%;
+      padding: 3px;
+    }
+    textarea {
+      resize: vertical;
+      min-width: 100%;
+      min-height: 150px;
+      padding: 3px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    button {
+      height: 53px;
+    }
+  }
+  @media (width > 600px) {
+    padding: 15px;
+    form button {
+      width: 200px;
+    }
+  }
+  @media (width > 1080px) {
+    padding: 30px;
+  }
+}
 //SECTION: MAP
 #map {
   ///COLORS
@@ -110,9 +390,7 @@
   ////LENGTH
   min-width: 100%;
   max-width: none;
-  height: 300px;
-  padding-top: 0;
-  // margin-bottom: 20px;
+  height: 500px;
   ////DECORATION
   border-radius: 5px;
   overflow: hidden;
@@ -120,212 +398,5 @@
     ////LENGTH
     width: 100%;
     height: 100%;
-  }
-}
-
-// SECTION: CONTACT
-#contact {
-  max-width: none;
-  .container {
-    ////FLEX
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    ////LENGHT
-    width: auto;
-    height: auto;
-    min-height: calc(100vh - 90px);
-    margin: 0 20px 20px;
-    ////DECORATION
-    background: linear-gradient(-45deg, #ee7752, #ca870b9c, #23a6d5, #23d5ab);
-    background-size: auto;
-    background-size: 400% 400%;
-    animation: gradient 20s ease infinite;
-    border-radius: 50px;
-
-    .form {
-      ////LENGTH
-      padding: 20px;
-      ////DECORATION
-      border-radius: 5px;
-      label,
-      input[type="checkbox"] {
-        cursor: pointer;
-      }
-      input[type="text"],
-      input[type="number"],
-      select,
-      textarea {
-        ////LENGHT
-        width: 100%;
-        padding: 12px;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        ////TEXT
-        font-size: 0.8rem;
-        ////DECORATION
-        border: 1px solid hsl(var(--main-bg));
-        resize: vertical;
-        background-color: hsl(var(--secondary-bg) / 0.062);
-        border-radius: 8px;
-
-        @media (width > 600px) {
-          ////TEXT
-          font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-        }
-      }
-
-      textarea {
-        ////LENGHT
-        min-height: 140px;
-      }
-
-      button {
-        background-color: hsl(var(--secondary-bg) / 0.2);
-        color: hsl(var(--txt-light));
-        ////LENGTH
-        padding: 15px 25px;
-        ////DECORATION
-        cursor: pointer;
-        border: none;
-        border: 1px solid hsl(var(--main-bg));
-        border-radius: 8px;
-
-        &:hover {
-          background-color: hsl(var(--accent-bg));
-        }
-      }
-      main {
-        .services > div {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          /////Custom checkbox
-          > label {
-            display: grid;
-            grid-template-columns: 35px 1fr;
-            align-items: center;
-            ////LENGTH
-            margin-bottom: 12px;
-            ////TEXT
-            font-size: 22px;
-            ////
-            cursor: pointer;
-            user-select: none;
-            /////Hide the browser's default checkbox
-            input {
-              ////POSITION
-              position: absolute;
-              opacity: 0;
-              height: 0;
-              width: 0;
-            }
-            .checkmark {
-              ////FLEX
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              ////LENGTH
-              height: 25px;
-              width: 25px;
-              ////DECORATION
-              background-color: hsl(var(--grey) / 0.8);
-              border: 1px solid hsl(var(--main-bg) / 0.6);
-              border-radius: 5px;
-              &:after {
-                content: "";
-                display: none;
-                ////Style the checkmark/indicator
-                ////LENGTH
-                width: 5px;
-                height: 10px;
-                ////DECORATION
-                border: solid hsl(var(--white));
-                border-width: 0 3px 3px 0;
-                transform: rotate(45deg);
-              }
-              ~ span {
-                ////TEXT
-                width: fit-content;
-                height: fit-content;
-                font-size: clamp(0.8rem, 0.71rem + 0.24vw, 1rem);
-              }
-            }
-            /////Hide the browser's default checkbox
-            input:checked {
-              ~ .checkmark {
-                background-color: hsl(var(--accent-bg));
-                ////Show the checkmark when checked
-                &::after {
-                  display: block;
-                }
-              }
-            }
-            &:hover input ~ .checkmark,
-            input:focus ~ .checkmark {
-              filter: brightness(95%);
-            }
-          }
-        }
-        .contact_info label,
-        .services > label,
-        > label,
-        button {
-          font-weight: bold;
-        }
-      }
-    }
-
-    header {
-      ////TEXT
-      text-align: center;
-
-      h2 {
-        color: hsl(var(--txt-light));
-        font-size: 2rem;
-      }
-
-      p {
-        color: hsl(var(--txt-light));
-      }
-    }
-
-    main {
-      float: left;
-      margin-top: 6px;
-      padding: 20px;
-
-      > div {
-        display: flex;
-        flex-direction: column;
-        column-gap: 10px;
-      }
-    }
-
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    @media screen and (width < 600px) {
-      ////LENGTH
-      padding-inline: 5%;
-      main,
-      button {
-        ////LENGTH
-        width: 100%;
-        margin-top: 0;
-      }
-
-      .form main .services > div {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (width > 1080px) {
-      main > .contact_info {
-        ////FLEX
-        flex-direction: row;
-      }
-    }
   }
 }

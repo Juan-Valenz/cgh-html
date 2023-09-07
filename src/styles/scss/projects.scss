@@ -44,7 +44,7 @@
         color: hsl(var(--txt-accent));
       }
       span {
-        color: hsl(var(--accent-bg));
+        color: hsl(var(--accent));
       }
     }
   }
@@ -140,7 +140,7 @@
         height: 30px;
         font-weight: bold;
         color: hsl(var(--txt-light));
-        background-color: hsl(var(--accent-bg));
+        background-color: hsl(var(--accent));
         border-radius: 5px;
         border: none;
         margin-top: 10px;
@@ -217,9 +217,9 @@
         ////TEXT
         font-size: 0.8rem;
         ////DECORATION
-        border: 1px solid hsl(var(--main-bg));
+        border: 1px solid hsl(var(--background));
         resize: vertical;
-        background-color: hsl(var(--secondary-bg) / 0.062);
+        background-color: hsl(var(--foreground) / 0.062);
         border-radius: 8px;
 
         @media (width > 600px) {
@@ -234,18 +234,18 @@
       }
 
       button {
-        background-color: hsl(var(--secondary-bg) / 0.2);
+        background-color: hsl(var(--foreground) / 0.2);
         color: hsl(var(--txt-light));
         ////LENGTH
         padding: 15px 25px;
         ////DECORATION
         cursor: pointer;
         border: none;
-        border: 1px solid hsl(var(--main-bg));
+        border: 1px solid hsl(var(--background));
         border-radius: 8px;
 
         &:hover {
-          background-color: hsl(var(--accent-bg));
+          background-color: hsl(var(--accent));
         }
       }
       main {
@@ -282,7 +282,7 @@
               width: 25px;
               ////DECORATION
               background-color: hsl(var(--grey) / 0.8);
-              border: 1px solid hsl(var(--main-bg) / 0.6);
+              border: 1px solid hsl(var(--background) / 0.6);
               border-radius: 5px;
               &:after {
                 content: "";
@@ -306,7 +306,7 @@
             /////Hide the browser's default checkbox
             input:checked {
               ~ .checkmark {
-                background-color: hsl(var(--accent-bg));
+                background-color: hsl(var(--accent));
                 ////Show the checkmark when checked
                 &::after {
                   display: block;
